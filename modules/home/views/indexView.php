@@ -400,7 +400,7 @@
                 <div class="secion-detail">
                     <ul class="list-item">
                         <li>
-                            <a href="?mod=product&action=index" title="">Điện thoại</a>
+                            <a href="?mod=product&action=index&cat_id=3" title="">Điện thoại</a>
                             <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">Iphone</a>
@@ -428,22 +428,22 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Máy tính bảng</a>
+                            <a href="?mod=product&action=index&cat_id=2" title="">Máy tính bảng</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">laptop</a>
+                            <a href="?mod=product&action=index&cat_id=1" title="">Laptop</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Tai nghe</a>
+                            <a href="?mod=product&action=index&cat_id=4" title="">Tai nghe</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Thời trang</a>
+                            <a href="?mod=product&action=index&cat_id=5" title="">Thời trang</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Đồ gia dụng</a>
+                            <a href="?mod=product&action=index&cat_id=6" title="">Đồ gia dụng</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Thiết bị văn phòng</a>
+                            <a href="?mod=product&action=index&cat_id=7" title="">Thiết bị văn phòng</a>
                         </li>
                     </ul>
                 </div>

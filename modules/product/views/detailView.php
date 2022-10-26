@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php get_header();
+ ?>
 <div id="main-content-wp" class="clearfix detail-product-page">
     <div class="wp-inner">
         <div class="secion" id="breadcrumb-wp">
@@ -8,62 +9,60 @@
                         <a href="" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" title="">Điện thoại</a>
+                        <a href="" title=""><?php global $cat_title;
+                                            if (!empty($cat_title)) echo $cat_title['cat_title']; ?></a>
                     </li>
                 </ul>
             </div>
         </div>
+        <?php global $product; ?>
         <div class="main-content fl-right">
             <div class="section" id="detail-product-wp">
                 <div class="section-detail clearfix">
                     <div class="thumb-wp fl-left">
                         <a href="" title="" id="main-thumb">
-                            <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_70aaf2_700x700_maxb.jpg"/>
+                            <img id="zoom" src="<?php echo $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_zoom']; ?>" />
                         </a>
                         <div id="list-thumb">
-                            <a href="" data-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_70aaf2_700x700_maxb.jpg">
-                                <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_02d57e_50x50_maxb.jpg" />
+                            <a href="" data-image="<?php echo $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_zoom']; ?>">
+                                <img id="zoom" src="<?php echo $product['product_normal']; ?>" />
                             </a>
-                            <a href="" data-image="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_70aaf2_700x700_maxb.jpg">
-                                <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_02d57e_50x50_maxb.jpg" />
-                            </a>
-                            <a href="" data-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_70aaf2_700x700_maxb.jpg">
-                                <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_02d57e_50x50_maxb.jpg" />
-                            </a>
-                            <a href="" data-image="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_70aaf2_700x700_maxb.jpg">
-                                <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_02d57e_50x50_maxb.jpg" />
-                            </a>
-                            <a href="" data-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_70aaf2_700x700_maxb.jpg">
-                                <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_02d57e_50x50_maxb.jpg" />
-                            </a>
-                            <a href="" data-image="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_70aaf2_700x700_maxb.jpg">
-                                <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_02d57e_50x50_maxb.jpg" />
-                            </a>
+                            <?php
+                            if (!empty($list_image)) {
+                                foreach ($list_image as $item) {
+                            ?>
+                                    <a href="" data-image="<?php echo $item['image_normal']; ?>" data-zoom-image="<?php echo $item['image_zoom']; ?>">
+                                        <img id="zoom" src="<?php echo $item['image_no_zoom']; ?>" />
+                                    </a>
+
+                            <?php }
+                            } ?>
                         </div>
                     </div>
                     <div class="thumb-respon-wp fl-left">
-                        <img src="public/images/img-pro-01.png" alt="">
+                        <img src="<?php echo $product['product_thumb']; ?>" alt="">
                     </div>
                     <div class="info fl-right">
-                        <h3 class="product-name">Laptop HP Probook 440 G2 LED Backlit</h3>
+                        <h3 class="product-name"><?php echo $product['product_title']; ?></h3>
                         <div class="desc">
-                            <p>Bộ vi xử lý :Intel Core i505200U 2.2 GHz (3MB L3)</p>
-                            <p>Cache upto 2.7 GHz</p>
-                            <p>Bộ nhớ RAM :4 GB (DDR3 Bus 1600 MHz)</p>
-                            <p>Đồ họa :Intel HD Graphics</p>
-                            <p>Ổ đĩa cứng :500 GB (HDD)</p>
+                            <?php echo $product['discription']; ?>
                         </div>
                         <div class="num-product">
                             <span class="title">Sản phẩm: </span>
                             <span class="status">Còn hàng</span>
                         </div>
-                        <p class="price">14.700.000đ</p>
-                        <div id="num-order-wp">
-                            <a title="" id="minus"><i class="fa fa-minus"></i></a>
-                            <input type="text" name="num-order" value="1" id="num-order">
-                            <a title="" id="plus"><i class="fa fa-plus"></i></a>
-                        </div>
-                        <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart">Thêm giỏ hàng</a>
+                        <p class="price"><?php echo format_number($product['price']); ?></p>
+                        <form method="POST" action="?mod=cart&action=addCart&product_id=<?php global $product_id; echo $product_id; ?>">
+                            <div id="num-order-wp">
+                                <a title="" id="minus"><i class="fa fa-minus"></i></a>
+                                <input type="text" name="num-order" value="1" id="num-order">
+                                <a title="" id="plus"><i class="fa fa-plus"></i></a>
+                            </div>
+                            <div class="group_buy">
+                                <a href="?page=cart" title="Mua ngay" class="buy-now">Mua ngay <br> <span class="add-text">(Giao hàng tận nơi hoặc lấy tại nhà)</span></a>
+                                <button title="Thêm giỏ hàng" class="add-cart" name="btn-add-cart" value="add-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><br>Thêm giỏ hàng</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -72,15 +71,12 @@
                     <h3 class="section-title">Mô tả sản phẩm</h3>
                 </div>
                 <div class="section-detail">
-                    <p>Máy tính xách tay HP Probook 440 G2 là dòng máy tính xách tay thích hợp cho doanh nghiệp và những người làm văn phòng. Do đó, ngoài cấu hình tốt, thiết kế bền bỉ, máy tính xách tay HP Probook 440 G2 còn có khả năng bảo mật toàn diện giúp bạn luôn yên tâm về dữ liệu của mình.</p>
-                    <p>Máy tính xách tay HP Probook 440 G2 là dòng máy tính xách tay thích hợp cho doanh nghiệp và những người làm văn phòng. Do đó, ngoài cấu hình tốt, thiết kế bền bỉ, máy tính xách tay HP Probook 440 G2 còn có khả năng bảo mật toàn diện giúp bạn luôn yên tâm về dữ liệu của mình.</p>
-                    <p>Máy tính xách tay HP Probook 440 G2 là dòng máy tính xách tay thích hợp cho doanh nghiệp và những người làm văn phòng. Do đó, ngoài cấu hình tốt, thiết kế bền bỉ, máy tính xách tay HP Probook 440 G2 còn có khả năng bảo mật toàn diện giúp bạn luôn yên tâm về dữ liệu của mình.</p>
-                    <p>Máy tính xách tay HP Probook 440 G2 là dòng máy tính xách tay thích hợp cho doanh nghiệp và những người làm văn phòng. Do đó, ngoài cấu hình tốt, thiết kế bền bỉ, máy tính xách tay HP Probook 440 G2 còn có khả năng bảo mật toàn diện giúp bạn luôn yên tâm về dữ liệu của mình.</p>
+                    <?php echo $product['procuduct_content']; ?>
                 </div>
             </div>
             <div class="section" id="same-category-wp">
                 <div class="section-head">
-                    <h3 class="section-title">Cùng chuyên mục</h3>
+                    <h3 class="section-title">Sản phẩm tương tự</h3>
                 </div>
                 <div class="section-detail">
                     <ul class="list-item">
@@ -194,7 +190,7 @@
                 <div class="secion-detail">
                     <ul class="list-item">
                         <li>
-                            <a href="?page=category_product" title="">Điện thoại</a>
+                            <a href="?mod=product&action=index&cat_id=3" title="">Điện thoại</a>
                             <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">Iphone</a>
@@ -222,22 +218,22 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Máy tính bảng</a>
+                            <a href="?mod=product&action=index&cat_id=2" title="">Máy tính bảng</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">laptop</a>
+                            <a href="?mod=product&action=index&cat_id=1" title="">Laptop</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Tai nghe</a>
+                            <a href="?mod=product&action=index&cat_id=3" title="">Tai nghe</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Thời trang</a>
+                            <a href="?mod=product&action=index&cat_id=4" title="">Thời trang</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Đồ gia dụng</a>
+                            <a href="?mod=product&action=index&cat_id=5" title="">Đồ gia dụng</a>
                         </li>
                         <li>
-                            <a href="?page=category_product" title="">Thiết bị văn phòng</a>
+                            <a href="?mod=product&action=index&cat_id=6" title="">Thiết bị văn phòng</a>
                         </li>
                     </ul>
                 </div>

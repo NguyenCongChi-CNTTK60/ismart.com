@@ -36,8 +36,15 @@ function set_value($value)
     if (!empty($$value)) return $$value;
 }
 
-function redirect($url) {
+function redirect($url)
+{
     if (!empty($url)) {
         header("Location: {$url}");
     }
 }
+
+function format_number($number)
+{
+    return number_format($number) . "đ";
+}
+

@@ -79,7 +79,7 @@
     font-weight: normal;
     border: none;
     outline: none;
-    background: #3f5da6;
+    background: #357ebd;
     color: #fff;
 }
 
@@ -102,7 +102,9 @@
 }
 
 #checkout-cart:hover {
-    background: #2b478c;
+    background-color: #2a6395;
+    border-color: #225179;
+    color: #fff;
 }
 
 #cart-wp table tfoot tr td #action-cart a:nth-child(2) {

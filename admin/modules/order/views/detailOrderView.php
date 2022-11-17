@@ -3,9 +3,11 @@
     <?php get_sidebar(); ?>
     <div id="wp-content">
         <div id="content" class="container-fluid">
+
             <div class="card">
                 <div class="card-header font-weight-bold">
-                    Chi tiết đơn hàng #1221
+                    Chi tiết đơn hàng #1212<?php echo $list_detail_order[0]['order_id']; ?>
+                    <span style="font-size: 13px; font-weight: 400;"><?php echo date("d/m/Y H:i", $list_detail_order[0]['date_create']); ?> </span>
                 </div>
                 <div class="group-section-payment d-flex">
                     <section class="ui-cart" id="order-cart">
@@ -19,57 +21,37 @@
                                 </div>
                         </header>
                         <div class="next-card">
-                            <h3 class="ui-subheading">CHƯA XÁC NHẬN GIAO HÀNG</h3>
+                            <h3 class="ui-subheading"><?php echo $list_detail_order[0]['status']; ?></h3>
                         </div>
                         <div class="next-card__section">
                             <table class="table--no-side-padding">
                                 <tbody>
-                                    <tr class="orders-line-item">
-                                        <td class="orders-line-item__image">
-                                            <div class="aspect-ratio">
-                                                <img title="Hộp quà tặng Flower 01" class="aspect-ratio__content" src="//bizweb.dktcdn.net/thumb/thumb/100/470/987/products/031024x1024.jpg?v=1668411024597">
-                                            </div>
-                                        </td>
-                                        <td class="orders-line-item__description">
-                                            <a style="color: #0097ff ;" href="">Hộp quà tặng Flower 01</a>
-                                            <p class="type--subdued">SKU : F04</p>
-                                        </td>
-                                        <td class="orders-line-item__price">
-                                            12,000,000₫
-                                        </td>
-                                        <td class="orders-line-item__times-sign">
-                                            ×
-                                        </td>
-                                        <td class="orders-line-item__quantity">
-                                            1
-                                        </td>
-                                        <td class="orders-line-item__total">
-                                            2,000,000₫ </td>
-                                    </tr>
-                                    <tr class="orders-line-item">
-                                        <td class="orders-line-item__image">
-                                            <div class="aspect-ratio">
-                                                <img title="Hộp quà tặng Flower 01" class="aspect-ratio__content" src="//bizweb.dktcdn.net/thumb/thumb/100/470/987/products/031024x1024.jpg?v=1668411024597">
-                                            </div>
-                                        </td>
-                                        <td class="orders-line-item__description">
-                                            <a style="color: #0097ff ;" href="">Hộp quà tặng Flower 01</a>
-                                            <p class="type--subdued">SKU : F04</p>
-                                        </td>
-                                        <td class="orders-line-item__price">
-                                            500,000đ
-                                        </td>
-                                        <td class="orders-line-item__times-sign">
-                                            ×
-                                        </td>
-                                        <td class="orders-line-item__quantity">
-                                            1
-                                        </td>
-                                        <td class="orders-line-item__total">
-                                            2,000,000₫ </td>
-                                    </tr>
-
-
+                                    <?php foreach ($list_detail_order as $item) { ?>
+                                        <tr class="orders-line-item">
+                                            <td class="orders-line-item__image">
+                                                <div class="aspect-ratio">
+                                                    <img title="Hộp quà tặng Flower 01" class="aspect-ratio__content" src="<?php echo $item['product_thumb']; ?>" style="width: 50px;  height: 50px; border: 1px solid rgba(195,207,216,.3);">
+                                                </div>
+                                            </td>
+                                            <td class="orders-line-item__description">
+                                                <a style="color: #0097ff ; font-size: 14px;" href=""><?php echo $item['product_title']; ?></a>
+                                                <p class="type--subdued">SKU : <?php echo $item['product_code']; ?></p>
+                                            </td>
+                                            <td class="orders-line-item__price">
+                                                <?php echo format_number($item['price']); ?>
+                                            </td>
+                                            <td class="orders-line-item__times-sign">
+                                                ×
+                                            </td>
+                                            <td class="orders-line-item__quantity">
+                                                <?php echo $item['number']; ?>
+                                            </td>
+                                            <td class="orders-line-item__total">
+                                                <?php $into_money = $item['price'] * $item['number'];
+                                                echo format_number($into_money);
+                                                ?> </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                             <div id="transaction_summary">
@@ -77,7 +59,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="type--subdued">Giá</td>
-                                            <td class="type--cost">3,000,000₫</td>
+                                            <td class="type--cost"><?php echo format_number($item['total']); ?></td>
                                         </tr>
                                         <tr>
                                             <td class="type--subdued">
@@ -87,14 +69,14 @@
                                             </td>
                                             <td class="type--cost">
                                                 <div>
-                                                    40,000₫
+                                                    0₫
                                                 </div>
                                             </td>
                                         </tr>
 
                                         <tr class="type--subdued">
                                             <td><strong>Tổng cộng</strong></td>
-                                            <td><strong>3,040,000₫</strong></td>
+                                            <td><strong><?php echo format_number($item['total']); ?></strong></td>
                                         </tr>
 
                                     </tbody>
@@ -104,7 +86,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="type--subdued">Khách hàng thanh toán</td>
-                                            <td class="type--cost">3,040,000₫</td>
+                                            <td class="type--cost"><?php echo format_number($item['total']); ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -143,25 +125,26 @@
                         <div class="next-card d-flex">
                             <h2 class="ui-header">Khách hàng</h2>
                             <div class="group-info-name" style="margin-left: 160px ;">
-                                <span><a class="title-info color-a" href="">Nguyễn Văn A</a></span>
-                                <span><a class="title-info color-a d-block" href="">2 đơn hàng</a></span>
+                                <span><a class="title-info color-a" href=""><?php echo $item['fullname']; ?></a></span>
+                                <span><a class="title-info color-a d-block" href=""><?php global $total_order;
+                                                                                    echo $total_order['total_order']; ?> đơn hàng</a></span>
                             </div>
                         </div>
                         <div class="next-card d-flex">
                             <h2 class="ui-header">Liên hệ</h2>
                             <div class="group-info-name" style="margin-left: 160px ;">
-                                <span>nguyenvana@gmail.com</span>
+                                <span><?php echo $item['email']; ?></span>
                             </div>
                         </div>
                         <div class="next-card d-flex">
                             <h2 class="ui-header">Địa chỉ giao hàng</h2>
                             <div class="group-info-name" style="margin-left: 160px ; font-size: 15px; color: #637381;">
-                                <p>Nguyễn Văn A</p>
-                                <p>+84328644258</p>
-                                <p>C24/9 449 Lê Văn Việt</p>
-                                <p>Phường Bến Ghé</p>
-                                <p>Quận 1</p>
-                                <p>TP.Hồ Chí Minh</p>
+                                <p><?php echo $item['fullname']; ?></p>
+                                <p>+84<?php echo $item['phone']; ?></p>
+                                <p><?php echo $item['address']; ?></p>
+                                <p><?php echo $item['name_wards']; ?></p>
+                                <p><?php echo $item['name_district']; ?></p>
+                                <p><?php echo $item['name_city']; ?></p>
                                 <p>Việt Nam</p>
                             </div>
                         </div>

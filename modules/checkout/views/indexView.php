@@ -20,7 +20,7 @@
                 <h1 class="section-title">Thông tin khách hàng</h1>
             </div>
             <div class="section-detail">
-                <form method="POST" action="" name="form-checkout">
+                <form method="POST" action="?mod=checkout&action=order" name="form-checkout">
                     <div class="form-row clearfix">
                         <div class="form-col fl-left">
                             <label for="fullname">Họ tên <span style="color:red;">(*)</span> </label>
@@ -46,7 +46,7 @@
                         <div class="form-col fl-left">
                             <label for="phone">Tỉnh/Thành phố <span style="color:red;">(*)</span></label>
                             <select name="province" id="provice" style="width:250px;" class="sel city">
-                                <option data-id="1" value=" Hà Nội"> Chọn tỉnh thành</option>
+                                <option data-id="1" value=""> Chọn tỉnh thành</option>
                                 <?php if (!empty($list_city)) {
                                     foreach ($list_city as $item) {
                                 ?>
@@ -58,16 +58,16 @@
                         <!-- select quận huyện -->
                         <div class="form-col fl-right">
                             <label for="phone">Quận/Huyện <span style="color:red;">(*)</span></label>
-                            <select name="province" id="province" class="sel district" style="width:277px;">
-                                <option data-id="1" value=" Hà Nội"> Chọn quận huyện</option>
+                            <select name="district" id="province" class="sel district" style="width:277px;">
+                                <option data-id="1" value=""> Chọn quận huyện</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row clearfix ">
                         <div class="form-col fl-left">
                             <label for="phone">Xã/Phường <span style="color:red;">(*)</span></label>
-                            <select name="province" id="province" class="sel wards" style="width:555px">
-                                <option data-id="1" value=" Hà Nội"> Chọn xã phường</option>
+                            <select name="wards" id="province" class="sel wards" style="width:555px">
+                                <option data-id="1" value=""> Chọn xã phường</option>
                             </select>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                             <textarea class="note" name="note" placeholder="Ghi chú"></textarea>
                         </div>
                     </div>
-                </form>
+
             </div>
         </div>
         <div class="section" id="order-review-wp">
@@ -109,24 +109,24 @@
                     <tfoot>
                         <tr class="order-total">
                             <td>Tổng đơn hàng:</td>
-                            <td><strong class="total-price"><?php global $total_cart; echo format_number($total_cart['tongtien']); ?></strong></td>
+                            <td><strong class="total-price"><?php global $total_cart;
+                                                            echo format_number($total_cart['tongtien']); ?></strong></td>
                         </tr>
                     </tfoot>
                 </table>
                 <div id="payment-checkout-wp">
                     <ul id="payment_methods">
                         <li>
-                            <input type="radio" id="direct-payment" name="payment-method" value="direct-payment">
-                            <label for="direct-payment">Thanh toán tại cửa hàng</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="payment-home" name="payment-method" value="payment-home">
+                            <input type="radio" id="payment-home" name="payment-method" value="payment-home" checked="true">
                             <label for="payment-home">Thanh toán tại nhà</label>
                         </li>
                     </ul>
                 </div>
-                <div class="place-order-wp clearfix">
-                    <input type="submit" id="order-now" value="Đặt hàng">
+                <div class="place-order-wp clearfix" style="margin-left: 442px;">
+                    <div class="group_buy">
+                        <button title="Thêm giỏ hàng" id="checkout-cart" class="add-cart" name="btn-submit-order" value="submit-order">Đặt hàng</button>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>

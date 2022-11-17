@@ -43,24 +43,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>1</td>
-                                <td ><a href="?mod=order&action=detailOrder" style=" color: #007bff;">#1212</a></td>
-                                <td>
-                                    Phan Văn Cương <br>
-                                </td>
-                                <td><span class="badge badge-warning">Đang xử lý</span></td>
-                                <td><span class="badge badge-warning">Chưa thanh toán</span></td>
-                                <td>26:06:2020 14:00</td>
-                                <td>
-                                    <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            
+                            <?php
+                            $temp = 0;
+                            foreach ($list_order as $item) {
+                                $temp++; ?>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td><?php echo $temp; ?></td>
+                                    <td><a href="?mod=order&action=detailOrder&order_id=<?php echo $item['order_id'];?>" style=" color: #007bff;">#1212<?php echo $item['order_id']; ?></a></td>
+                                    <td>
+                                        <?php echo $item['fullname']; ?><br>
+                                    </td>
+                                    <td><span class="badge badge-warning" style="font-weight: 400; padding: 3px 10px; background-color: #ffea8a;"><?php echo $item['status']; ?></span></td>
+                                    <td><span class="badge badge-warning" style="font-weight: 400; padding: 3px 10px; background-color: #ffc58b"><?php echo $item['status_pay']; ?></span></td>
+                                    <td><?php echo date("d/m/Y H:i", $item['date_create']); ?></td>
+                                    <td>
+                                        <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                        <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                     <nav aria-label="Page navigation example">

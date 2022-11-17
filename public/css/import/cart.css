@@ -118,6 +118,7 @@
 #total-price span {
     color: #ad0000;
     font-family: 'Roboto Medium';
+    padding-left: 10px;
 }
 
 #action-cart-wp {

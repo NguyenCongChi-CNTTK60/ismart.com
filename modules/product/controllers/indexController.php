@@ -1,6 +1,6 @@
 <?php
 function construct()
-{
+{   
     load_model('index');
     load('lib', 'validation');
 }
@@ -32,3 +32,4 @@ function detailAction()
    // show_array($data);
     load_view('detail',$data);
 }
+

@@ -23,28 +23,62 @@
                 <form method="POST" action="" name="form-checkout">
                     <div class="form-row clearfix">
                         <div class="form-col fl-left">
-                            <label for="fullname">Họ tên</label>
-                            <input type="text" name="fullname" id="fullname">
+                            <label for="fullname">Họ tên <span style="color:red;">(*)</span> </label>
+                            <input type="text" name="fullname" id="fullname" placeholder="Họ và tên">
                         </div>
                         <div class="form-col fl-right">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email">
+                            <label for="email">Email <span style="color:red;">(*)</span> </label>
+                            <input type="email" name="email" id="email" placeholder="Email">
                         </div>
                     </div>
                     <div class="form-row clearfix">
                         <div class="form-col fl-left">
-                            <label for="address">Địa chỉ</label>
-                            <input type="text" name="address" id="address">
+                            <label for="address">Địa chỉ <span style="color:red;">(*)</span> </label>
+                            <input type="text" name="address" id="address" placeholder="Địa chỉ nhận/tên nhà">
                         </div>
                         <div class="form-col fl-right">
-                            <label for="phone">Số điện thoại</label>
-                            <input type="tel" name="phone" id="phone">
+                            <label for="phone">Số điện thoại <span style="color:red;">(*)</span></label>
+                            <input type="tel" name="phone" id="phone" placeholder="Số điện thoại">
                         </div>
                     </div>
+                    <!-- select city -->
+                    <div class="form-row clearfix">
+                        <div class="form-col fl-left">
+                            <label for="phone">Tỉnh/Thành phố <span style="color:red;">(*)</span></label>
+                            <select name="province" id="provice" style="width:250px;" class="sel city">
+                                <option data-id="1" value=" Hà Nội"> Chọn tỉnh thành</option>
+                                <?php if (!empty($list_city)) {
+                                    foreach ($list_city as $item) {
+                                ?>
+                                        <option data-id="<?php echo $item['city_id']; ?>" value="<?php echo $item['city_id']; ?>"><?php echo $item['name_city']; ?> </option>
+                                <?php }
+                                } ?>
+                            </select>
+                        </div>
+                        <!-- select quận huyện -->
+                        <div class="form-col fl-right">
+                            <label for="phone">Quận/Huyện <span style="color:red;">(*)</span></label>
+                            <select name="province" id="province" class="sel district" style="width:277px;">
+                                <option data-id="1" value=" Hà Nội"> Chọn quận huyện</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row clearfix ">
+                        <div class="form-col fl-left">
+                            <label for="phone">Xã/Phường <span style="color:red;">(*)</span></label>
+                            <select name="province" id="province" class="sel wards" style="width:555px">
+                                <option data-id="1" value=" Hà Nội"> Chọn xã phường</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <!-- . -->
+
                     <div class="form-row">
                         <div class="form-col">
                             <label for="notes">Ghi chú</label>
-                            <textarea name="note"></textarea>
+                            <textarea class="note" name="note" placeholder="Ghi chú"></textarea>
                         </div>
                     </div>
                 </form>
@@ -63,19 +97,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="cart-item">
-                            <td class="product-name">Son môi nữ cá tính<strong class="product-quantity">x 1</strong></td>
-                            <td class="product-total">350.000đ</td>
-                        </tr>
-                        <tr class="cart-item">
-                            <td class="product-name">Đồ tẩy trang nhập khẩu Mỹ<strong class="product-quantity">x 2</strong></td>
-                            <td class="product-total">500.000đ</td>
-                        </tr>
+                        <?php
+                        foreach ($cart as $item) {
+                        ?>
+                            <tr class="cart-item">
+                                <td class="product-name"><?php echo $item['product_title']; ?><strong class="product-quantity">x <?php echo $item['number_cart']; ?></strong></td>
+                                <td class="product-total"><?php echo format_number($item['thanhtien']); ?></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                     <tfoot>
                         <tr class="order-total">
                             <td>Tổng đơn hàng:</td>
-                            <td><strong class="total-price">800.000đ</strong></td>
+                            <td><strong class="total-price"><?php global $total_cart; echo format_number($total_cart['tongtien']); ?></strong></td>
                         </tr>
                     </tfoot>
                 </table>

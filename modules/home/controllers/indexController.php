@@ -1,11 +1,13 @@
 <?php
 function construct()
 {
-   load_view('index');
+   load('lib', 'validation');
+   
 }
 
 
 function indexAction()
 {
-    
+   load_model('index');
+   load_view('index');
 }

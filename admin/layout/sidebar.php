@@ -1,108 +1,93 @@
-<div id="sidebar" class="fl-left">
+<div id="sidebar">
     <ul id="sidebar-menu">
-        <li class="nav-item">
-            <a href="" title="" class="nav-link nav-toggle">
-                <span class="fa fa-map icon"></span>
-                <span class="title">Trang</span>
+        <li class="nav-link">
+            <a href="?view=dashboard">
+                <div class="nav-link-icon d-inline-flex">
+                    <i class="far fa-folder" style="padding-right: 8px ;"></i>
+                </div>
+                Dashboard
             </a>
+            <i class="arrow fas fa-angle-right" style="color: white ;"></i>
+        </li>
+        <li class="nav-link">
+            <a href="?view=list-post">
+                <div class="nav-link-icon d-inline-flex">
+                    <i class="far fa-folder" style="padding-right: 8px ;"></i>
+                </div>
+                Trang
+            </a>
+            <i class="arrow fas fa-angle-right" style="color: white ;"></i>
+
             <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="?page=add_page" title="" class="nav-link">Thêm mới</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=list_page" title="" class="nav-link">Danh sách các trang</a>
-                </li>
+                <li><a href="?view=add-post">Thêm mới</a></li>
+                <li><a href="?view=list-post">Danh sách</a></li>
             </ul>
         </li>
-        <li class="nav-item">
-            <a href="" title="" class="nav-link nav-toggle">
-                <span class="fa fa-pencil-square-o icon"></span>
-                <span class="title">Bài viết</span>
+        <li class="nav-link">
+            <a href="?view=list-post">
+                <div class="nav-link-icon d-inline-flex">
+                    <i class="far fa-folder" style="padding-right: 8px ;" ></i>
+                </div>
+                Bài viết
             </a>
+            <i class="arrow fas fa-angle-right" style="color: white ;"></i>
             <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="?page=add_post" title="" class="nav-link">Thêm mới</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=list_post" title="" class="nav-link">Danh sách bài viết</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=list_cat" title="" class="nav-link">Danh mục bài viết</a>
-                </li>
+                <li><a href="?view=add-post">Thêm mới</a></li>
+                <li><a href="?view=list-post">Danh sách</a></li>
+                <li><a href="?view=cat">Danh mục</a></li>
             </ul>
         </li>
-        <li class="nav-item">
-            <a href="" title="" class="nav-link nav-toggle">
-                <span class="fa fa-product-hunt icon"></span>
-                <span class="title">Sản phẩm</span>
+        <li class="nav-link active">
+            <a href="?view=list-product">
+                <div class="nav-link-icon d-inline-flex">
+                    <i class="far fa-folder" style="padding-right: 8px ;"></i>
+                </div>
+                Sản phẩm
             </a>
+            <i class="arrow fas fa-angle-right" style="color: white ;"></i>
             <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="?page=add_product" title="" class="nav-link">Thêm mới</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=list_product" title="" class="nav-link">Danh sách sản phẩm</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=list_cat" title="" class="nav-link">Danh mục sản phẩm</a>
-                </li>
+                <li><a href="?mod=product&action=addProduct">Thêm mới</a></li>
+                <li><a href="?mod=product&action=index">Danh sách</a></li>
+                <li><a href="?view=cat-product">Danh mục</a></li>
             </ul>
         </li>
-        <li class="nav-item">
-            <a href="" title="" class="nav-link nav-toggle">
-                <span class="fa fa-database icon"></span>
-                <span class="title">Bán hàng</span>
+        <li class="nav-link">
+            <a href="?view=list-order">
+                <div class="nav-link-icon d-inline-flex">
+                    <i class="far fa-folder" style="padding-right: 8px ;"></i>
+                </div>
+                Bán hàng
             </a>
+            <i class="arrow fas fa-angle-right" style="color: white ;"></i>
             <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="?page=list_order" title="" class="nav-link">Danh sách đơn hàng</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=list_customer" title="" class="nav-link">Danh sách khách hàng</a>
-                </li>
+                <li><a href="?mod=order&action=index">Đơn hàng</a></li>
             </ul>
         </li>
-        <li class="nav-item">
-            <a href="#" title="" class="nav-link nav-toggle">
-                <span class="fa fa-cubes icon"></span>
-                <span class="title">Khối giao diện</span>
+        <li class="nav-link">
+            <a href="?view=list-user">
+                <div class="nav-link-icon d-inline-flex">
+                    <i class="far fa-folder " style="padding-right: 8px ;"></i>
+                </div>
+                Users
             </a>
+            <i class="arrow fas fa-angle-right" style="color: white ;"></i>
             <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="?page=add_widget" title="" class="nav-link">Thêm mới</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=list_widget" title="" class="nav-link">Danh sách khối</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=menu" title="" class="nav-link">Menu</a>
-                </li>
+                <li><a href="?view=add-user">Thêm mới</a></li>
+                <li><a href="?view=list-user">Danh sách</a></li>
             </ul>
         </li>
-        <li class="nav-item">
-            <a href="#" title="" class="nav-link nav-toggle">
-                <i class="fa fa-sliders" aria-hidden="true"></i>
-                <span class="title">Slider</span>
-            </a>
-            <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="?page=add_slider" title="" class="nav-link">Thêm mới</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=list_slider" title="" class="nav-link">Danh sách slider</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="#" title="" class="nav-link nav-toggle">
-                <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                <span class="title">Media</span>
-            </a>
-            <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="?page=list_media" title="" class="nav-link">Danh sách media</a>
-                </li>
-            </ul>
-        </li>
+
+        <!-- <li class="nav-link"><a>Bài viết</a>
+                        <ul class="sub-menu">
+                            <li><a>Thêm mới</a></li>
+                            <li><a>Danh sách</a></li>
+                            <li><a>Thêm danh mục</a></li>
+                            <li><a>Danh sách danh mục</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-link"><a>Sản phẩm</a></li>
+                    <li class="nav-link"><a>Đơn hàng</a></li>
+                    <li class="nav-link"><a>Hệ thống</a></li> -->
+
     </ul>
 </div>

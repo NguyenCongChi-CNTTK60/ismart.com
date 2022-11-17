@@ -1,0 +1,142 @@
+section.ui-cart {
+    width: 40%;
+    padding: 22px;
+}
+
+.ui-stack-wp {
+    display: flex;
+}
+
+.ui-stack-fill {
+    width: 85%;
+}
+
+.ui-stack-item p {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 0px;
+}
+
+.next-card {
+    padding: 15px 0px;
+    border-bottom: 1px solid #e2d9d9;
+}
+
+.next-card h3 {
+    font-size: 13px;
+}
+
+div.next-card__section {
+    padding: 10px 15px;
+}
+
+.aspect-ratio {
+    padding-right: 20px;
+}
+
+.orders-line-item__description {
+    padding: 5px 30px 5px 15px;
+    width: 310px;
+}
+
+.orders-line-item__price,
+.orders-line-item__times-sign,
+.orders-line-item__quantity {
+    padding: 5px 15px;
+}
+
+.orders-line-item__price {
+    width: 150px;
+}
+
+.orders-line-item__total {
+    padding: 5px 0px 5px 35px;
+}
+
+p.type--subdued {
+    margin-bottom: 0px;
+    font-size: 13px;
+}
+
+tr.orders-line-item {
+    border-bottom: 1px solid gainsboro;
+    padding-top: 10px;
+    display: block;
+}
+
+#transaction_summary {
+    padding: 16px 0px 0px 16px;
+}
+
+.type--subdued {
+    width: 49%;
+    text-align: end;
+    color: #637381;
+}
+
+.payment {
+    display: flex;
+}
+
+.type--cost {
+    width: 350px;
+    text-align: end;
+}
+
+.payment-discrip {
+    font-size: 15px;
+    margin-left: 20px;
+    width: 500px;
+}
+
+i.payment--icon {
+    font-size: 18px;
+    color: #007ace;
+}
+
+.submit--payment {
+    background-color: #007ace;
+    border-radius: 5px;
+}
+
+.payment-discrip-submit {
+    padding: 0px 16px 0px 16px;
+    color: white;
+    font-size: 14px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+
+/* info */
+
+.color-a {
+    color: #007ace;
+    font-size: 15px;
+}
+
+section.ui-info {
+    width: 41%;
+    padding: 25px;
+    margin-left: 150px;
+}
+
+h2.ui-header {
+    font-size: 16px;
+    margin-bottom: 0px;
+    width: 130px;
+}
+
+.group-info-name p {
+    margin-bottom: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}

@@ -1,97 +1,44 @@
-<?php ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Quản lý ISMART</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="public/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="public/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-    <link href="public/reset.css" rel="stylesheet" type="text/css" />
-    <link href="public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="public/style.css" rel="stylesheet" type="text/css" />
-    <link href="public/responsive.css" rel="stylesheet" type="text/css" />
-
-    <script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-    <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-    <script src="public/js/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
-    <script src="public/js/main.js" type="text/javascript"></script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/detailOrder.css">
+    <title>Admintrator</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="public/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="site">
-        <div id="container">
-            <div id="header-wp">
-                <div class="wp-inner clearfix">
-                    <a href="?page=list_post" title="" id="logo" class="fl-left"><?php  ?></a>
-                    <ul id="main-menu" class="fl-left">
-                        <li>
-                            <a href="?page=list_post" title="">Trang</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="?page=add_page" title="">Thêm mới</a>
-                                </li>
-                                <li>
-                                    <a href="?page=list_page" title="">Danh sách trang</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="?page=list_post" title="">Bài viết</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="?page=add_post" title="">Thêm mới</a>
-                                </li>
-                                <li>
-                                    <a href="?page=list_post" title="">Danh sách bài viết</a>
-                                </li>
-                                <li>
-                                    <a href="?page=list_cat" title="">Danh mục bài viết</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="?page=list_product" title="">Sản phẩm</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="?page=add_product" title="">Thêm mới</a>
-                                </li>
-                                <li>
-                                    <a href="?page=list_product" title="">Danh sách sản phẩm</a>
-                                </li>
-                                <li>
-                                    <a href="?page=list_cat" title="">Danh mục sản phẩm</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="" title="">Bán hàng</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="?page=list_order" title="">Danh sách đơn hàng</a>
-                                </li>
-                                <li>
-                                    <a href="?page=list_order" title="">Danh sách khách hàng</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="?page=menu" title="">Menu</a>
-                        </li>
-                    </ul>
-                    <div id="dropdown-user" class="dropdown dropdown-extended fl-right">
-                        <button class="dropdown-toggle clearfix" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <div id="thumb-circle" class="fl-left">
-                                <img src="public/images/img-admin.png">
-                            </div>
-                            <h3 id="account" class="fl-right"><?php if (!empty(user_login())) echo user_login(); ?></h3>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="?mod=users&action=update" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
-                            <li><a href="?mod=users&action=logout" title="Thoát">Thoát</a></li>
-                        </ul>
+    <div id="warpper" class="nav-fixed">
+        <nav class="topnav shadow navbar-light bg-white d-flex">
+            <div class="navbar-brand"><a href="?" style="color: #202d3d ; font-size: 17px;">ISMART ADMIN </a></div>
+            <div class="nav-right ">
+                <div class="btn-group mr-auto">
+                    <button type="button" class="btn dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="plus-icon fas fa-plus-circle" style="color: #202d3f; ;"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="?view=add-post">Thêm bài viết</a>
+                        <a class="dropdown-item" href="?view=add-product">Thêm sản phẩm</a>
+                        <a class="dropdown-item" href="?view=list-order">Thêm đơn hàng</a>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        NGUYỄN CÔNG CHÍ
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Tài khoản</a>
+                        <a class="dropdown-item" href="#">Thoát</a>
                     </div>
                 </div>
             </div>
+        </nav>

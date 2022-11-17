@@ -12,10 +12,10 @@ ob_start();
  * 
  */
 
-$config['base_url'] = "http://localhost/unitop/back-end/project/ismart.com/admin";
+$config['base_url'] = "http://localhost/unitop/back-end/project-1/ismart.com/admin";
 
 
-$config['default_module'] = 'users';
+$config['default_module'] = 'dashboard';
 $config['default_controller'] = 'index';
 $config['default_action'] = 'index';
 

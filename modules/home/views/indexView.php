@@ -5,6 +5,18 @@
             <div class="section" id="slider-wp">
                 <div class="section-detail">
                     <div class="item">
+                        <img src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/apple-watch-sliding.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/690-300-gt3.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/airpods-pro-2022-sliding.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="public/images/slider-04.png" alt="">
+                    </div>
+                    <div class="item">
                         <img src="public/images/slider-01.png" alt="">
                     </div>
                     <div class="item">
@@ -12,6 +24,9 @@
                     </div>
                     <div class="item">
                         <img src="public/images/slider-03.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/sliding-fold4-th11-v2.jpg" alt="">
                     </div>
                 </div>
             </div>

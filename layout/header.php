@@ -17,7 +17,6 @@ $total_cart = show_total_cart();
 <head>
     <title>ISMART STORE</title>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="public/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
     <link href="public/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -36,7 +35,6 @@ $total_cart = show_total_cart();
     <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
     <script src="public/js/carousel/owl.carousel.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
-
 </head>
 
 <body>

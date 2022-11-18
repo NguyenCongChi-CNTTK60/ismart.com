@@ -51,20 +51,14 @@ function orderAction()
 {
 
    $t = time();
-   echo $t;
-   echo date("d/m/Y h:i", $t);
-   show_array($_POST);
-
    $num_custom = check_custom_exit($_POST['phone']);
-
-   echo $num_custom;
 
    if ($num_custom <= 0) {
 
       $data = array(
          'fullname' => $_POST['fullname'],
          'email' =>  $_POST['email'],
-         'adress' => $_POST['address'],
+         'address' => $_POST['address'],
          'phone' => $_POST['phone'],
          'city_id' =>  $_POST['province'],
          'district_id' => $_POST['district'],
@@ -101,5 +95,6 @@ function orderAction()
          insert_detail_order($data2);
          delete_all_cart();
       }
+      load_view('thankyou');
    }
 }

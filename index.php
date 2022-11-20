@@ -5,6 +5,9 @@
  * app path, tương ứng với các thư mục
  * --------------------------------------------------------------------
  */
+
+
+
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 $app_path = dirname(__FILE__);
@@ -16,7 +19,7 @@ define('APPPATH', $app_path);
  */
 
 $core_folder = 'core';
-define('COREPATH', APPPATH.DIRECTORY_SEPARATOR.$core_folder);
+define('COREPATH', APPPATH . DIRECTORY_SEPARATOR . $core_folder);
 
 /*
  * --------------------------------------------------------------------
@@ -24,7 +27,7 @@ define('COREPATH', APPPATH.DIRECTORY_SEPARATOR.$core_folder);
  * --------------------------------------------------------------------
  */
 $modules_folder = 'modules';
-define('MODULESPATH', APPPATH.DIRECTORY_SEPARATOR.$modules_folder);
+define('MODULESPATH', APPPATH . DIRECTORY_SEPARATOR . $modules_folder);
 
 
 /*
@@ -34,7 +37,7 @@ define('MODULESPATH', APPPATH.DIRECTORY_SEPARATOR.$modules_folder);
  */
 
 $helper_folder = 'helper';
-define('HELPERPATH', APPPATH.DIRECTORY_SEPARATOR.$helper_folder);
+define('HELPERPATH', APPPATH . DIRECTORY_SEPARATOR . $helper_folder);
 
 
 /*
@@ -42,8 +45,8 @@ define('HELPERPATH', APPPATH.DIRECTORY_SEPARATOR.$helper_folder);
  * library path
  * --------------------------------------------------------------------
  */
-$lib_folder= 'libraries';
-define('LIBPATH', APPPATH.DIRECTORY_SEPARATOR.$lib_folder);
+$lib_folder = 'libraries';
+define('LIBPATH', APPPATH . DIRECTORY_SEPARATOR . $lib_folder);
 
 
 /*
@@ -51,15 +54,15 @@ define('LIBPATH', APPPATH.DIRECTORY_SEPARATOR.$lib_folder);
  * layout path
  * --------------------------------------------------------------------
  */
-$layout_folder= 'layout';
-define('LAYOUTPATH', APPPATH.DIRECTORY_SEPARATOR.$layout_folder);
+$layout_folder = 'layout';
+define('LAYOUTPATH', APPPATH . DIRECTORY_SEPARATOR . $layout_folder);
 
 /*
  * --------------------------------------------------------------------
  * config path
  * --------------------------------------------------------------------
  */
-$config_folder= 'config';
-define('CONFIGPATH', APPPATH.DIRECTORY_SEPARATOR.$config_folder);
+$config_folder = 'config';
+define('CONFIGPATH', APPPATH . DIRECTORY_SEPARATOR . $config_folder);
 
-require COREPATH.DIRECTORY_SEPARATOR.'appload.php';   // directory_separator: /
+require COREPATH . DIRECTORY_SEPARATOR . 'appload.php';   // directory_separator: /

@@ -39,7 +39,8 @@
                                 <th scope="col">Trạng thái</th>
                                 <th scope="col">Thanh toán</th>
                                 <th scope="col">Ngày đặt</th>
-                                <th scope="col">Tác vụ</th>
+                                <th scope="col">Tổng tiền</th>
+                                <!-- <th scope="col">Tác vụ</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -59,10 +60,11 @@
                                     <td><span class="badge badge-warning" style="font-weight: 400; padding: 3px 10px; background-color: #ffea8a;"><?php echo $item['status']; ?></span></td>
                                     <td><span class="badge badge-warning" style="font-weight: 400; padding: 3px 10px; background-color: #ffc58b"><?php echo $item['status_pay']; ?></span></td>
                                     <td><?php echo date("d/m/Y H:i", $item['date_create']); ?></td>
-                                    <td>
+                                    <td><?php echo format_number($item['total']); ?></td>
+                                    <!-- <td>
                                         <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                                         <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             <?php } ?>
                         </tbody>

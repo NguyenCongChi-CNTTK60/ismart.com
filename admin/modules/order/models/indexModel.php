@@ -1,7 +1,7 @@
 <?php
 function show_order()
 {
-    $sql = "SELECT * FROM tbl_order INNER JOIN tbl_customer ON tbl_order.customer_id = tbl_customer.customer_id";
+    $sql = "SELECT * FROM tbl_order INNER JOIN tbl_customer ON tbl_order.customer_id = tbl_customer.customer_id ORDER BY date_create DESC";
     $data = db_fetch_array($sql);
     return $data;
 }

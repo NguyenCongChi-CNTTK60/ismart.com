@@ -118,7 +118,7 @@
                     <ul id="payment_methods">
                         <li>
                             <input type="radio" id="payment-home" name="payment-method" value="payment-home" checked="true">
-                            <label for="payment-home">Thanh toán tại nhà</label>
+                            <label for="payment-home">Thanh toán khi nhận hàng (COD)</label>
                         </li>
                     </ul>
                 </div>

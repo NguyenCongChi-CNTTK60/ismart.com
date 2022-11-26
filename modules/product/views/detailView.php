@@ -1,5 +1,5 @@
 <?php get_header();
- ?>
+?>
 <div id="main-content-wp" class="clearfix detail-product-page">
     <div class="wp-inner">
         <div class="secion" id="breadcrumb-wp">
@@ -21,20 +21,19 @@
                 <div class="section-detail clearfix">
                     <div class="thumb-wp fl-left">
                         <a href="" title="" id="main-thumb">
-                            <img id="zoom" src="<?php echo $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_zoom']; ?>" />
+                            <img id="zoom"  style="width: 356px; height: 356px;" src="<?php echo $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_thumb']; ?>" />
                         </a>
                         <div id="list-thumb">
-                            <a href="" data-image="<?php echo $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_zoom']; ?>">
-                                <img id="zoom" src="<?php echo $product['product_normal']; ?>" />
+                            <a href=""  data-image="<?php echo $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_thumb'];  ?>">
+                                <img id="zoom" src="<?php echo $product['product_thumb']; ?>" style="width: 50px; height: 50px;" />
                             </a>
                             <?php
                             if (!empty($list_image)) {
                                 foreach ($list_image as $item) {
                             ?>
-                                    <a href="" data-image="<?php echo $item['image_normal']; ?>" data-zoom-image="<?php echo $item['image_zoom']; ?>">
-                                        <img id="zoom" src="<?php echo $item['image_no_zoom']; ?>" />
+                                    <a href="" data-image="<?php echo $item['product_thumb_dis'];  ?>" data-zoom-image="<?php echo $item['product_thumb_dis']; ?>" >
+                                        <img id="zoom" src="<?php echo $item['product_thumb_dis']; ?>" style="width: 50px; height: 50px;"/>
                                     </a>
-
                             <?php }
                             } ?>
                         </div>
@@ -52,7 +51,8 @@
                             <span class="status">Còn hàng</span>
                         </div>
                         <p class="price"><?php echo format_number($product['price']); ?></p>
-                        <form method="POST" action="?mod=cart&action=addCart&product_id=<?php global $product_id; echo $product_id; ?>">
+                        <form method="POST" action="?mod=cart&action=addCart&product_id=<?php global $product_id;
+                                                                                        echo $product_id; ?>">
                             <div id="num-order-wp">
                                 <a title="" id="minus"><i class="fa fa-minus"></i></a>
                                 <input type="text" name="num-order" value="1" id="num-order">
@@ -71,7 +71,7 @@
                     <h3 class="section-title">Mô tả sản phẩm</h3>
                 </div>
                 <div class="section-detail">
-                    <?php echo $product['procuduct_content']; ?>
+                    <?php echo $product['product_content']; ?>
                 </div>
             </div>
             <div class="section" id="same-category-wp">

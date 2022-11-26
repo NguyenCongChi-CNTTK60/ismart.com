@@ -46,7 +46,7 @@
             </a>
             <i class="arrow fas fa-angle-right" style="color: white ;"></i>
             <ul class="sub-menu">
-                <li><a href="?mod=product&action=addProduct">Thêm mới</a></li>
+                <li><a href="?mod=product&action=addProduct" style="padding-top: 10px;">Thêm mới</a></li>
                 <li><a href="?mod=product&action=index">Danh sách</a></li>
                 <li><a href="?view=cat-product">Danh mục</a></li>
             </ul>
@@ -56,11 +56,11 @@
                 <div class="nav-link-icon d-inline-flex">
                     <i class="far fa-folder" style="padding-right: 8px ;"></i>
                 </div>
-                Bán hàng
+                Đơn hàng
             </a>
             <i class="arrow fas fa-angle-right" style="color: white ;"></i>
             <ul class="sub-menu">
-                <li><a href="?mod=order&action=index">Đơn hàng</a></li>
+                <li><a href="?mod=order&action=index">Danh sách đơn hàng</a></li>
             </ul>
         </li>
         <li class="nav-link">

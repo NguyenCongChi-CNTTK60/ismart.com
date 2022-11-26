@@ -57,6 +57,7 @@ a:hover {
     min-height: 100vh;
     padding-top: 3.625rem;
     padding-left: 15rem;
+    background-color: #f4f6f8;
 }
 
 #content {
@@ -64,8 +65,69 @@ a:hover {
     padding-bottom: 20px;
 }
 
+#content.content-60 {
+    width: 60%;
+    margin: 0px auto;
+}
+
 #content .card-header {
     text-transform: uppercase;
+}
+
+#content .ui-title-bar__heading-group h1 {
+    font-size: 25px;
+    padding-top: 15px;
+}
+
+#content .ui-type-container {
+    width: 100%;
+    /* padding: 10px 0px; */
+    background: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#content .next-input-wrapper input {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #C4CDD6;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+}
+
+#content .next-input-wrapper input:focus {
+    border: 2px solid #0088ff;
+}
+
+#content .next-input-wrapper .group--price input {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #C4CDD6;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+}
+
+#content .next-input-wrapper .group--price {
+    display: flex;
+    justify-content: space-between;
+}
+
+#guide_line_step_2 {
+    margin-top: 16px;
+}
+
+#content label.next-label {
+    margin-bottom: 5px;
+}
+
+#content label.next-label-1 {
+    font-weight: 500;
+    /* margin-bottom: 5px; */
+    padding: 5px;
 }
 
 .nav-fixed .topnav {
@@ -116,7 +178,7 @@ ul#sidebar-menu * {
 
 #sidebar-menu .sub-menu li a {
     display: block;
-    padding: 5px 0px;
+    padding: 7px 0px;
 }
 
 #page-body {
@@ -151,4 +213,53 @@ ul#sidebar-menu * {
 
 a:hover {
     color: #60b9e9;
+}
+
+.ui-type-container {
+    border: 1px solid #dfe4e8;
+}
+
+.sel {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border-color: #dfe4e8;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-save button {
+    background: #007bff;
+    padding: 6px 15px;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    outline: none;
+}
+
+.btn-cancle button {
+    background: #fcfcfd;
+    padding: 6px 17px;
+    border-radius: 3px;
+    /* width: 6%; */
+    color: black;
+    border: 1px solid #dfe4e8;
+    outline: none;
+}
+
+.btn-save button:hover {
+    color: white;
+    background: #3894ff;
+}
+
+.btn-cancle button:hover {
+    background: #f7f8f9;
+}
+
+.btn-add--product {
+    outline: none;
+    background: white;
+    margin-bottom: 8px;
+    color: #007bff;
+    border: none;
 }

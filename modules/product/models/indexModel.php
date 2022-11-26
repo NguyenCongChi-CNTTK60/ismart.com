@@ -22,7 +22,7 @@ function get_product_by_product_id($id)
 
 
 function get_list_image($id){
-    $sql = "SELECT image_normal,image_zoom,image_no_zoom FROM tbl_image_products INNER JOIN tbl_products ON tbl_image_products.product_id = tbl_products.product_id WHERE tbl_image_products.product_id = $id";
+    $sql = "SELECT * FROM tbl_image_products INNER JOIN tbl_products ON tbl_image_products.product_id = tbl_products.product_id WHERE tbl_image_products.product_id = $id";
     $data = db_fetch_array($sql);
     return $data;
 }

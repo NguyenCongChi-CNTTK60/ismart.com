@@ -44,12 +44,12 @@
                         ?>
                                 <li>
                                     <a href="?mod=product&action=detail&product_id=<?php echo $item['product_id'] ?>" title="" class="thumb">
-                                        <img src="<?php echo $item['product_thumb'] ?>" alt="">
+                                        <img src="<?php echo $item['product_thumb']; ?>" style="width: 358px; height: 180px;" alt="">
                                     </a>
                                     <a href="?mod=product&action=detail&product_id=<?php echo $item['product_id'] ?>" title="" class="product-name"><?php echo $item['product_title'] ?></a>
                                     <div class="price">
-                                        <span class="new"><?php echo format_number($item['price']);?></span>
-                                        <span class="old"><?php echo format_number($item['price_old']);?></span>
+                                        <span class="new"><?php echo format_number($item['price']); ?></span>
+                                        <span class="old"><?php echo format_number($item['price_old']); ?></span>
                                     </div>
                                     <div class="action clearfix">
                                         <a href="?page=cart" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>

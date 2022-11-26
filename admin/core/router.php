@@ -16,5 +16,5 @@ call_function(array('construct', $action_name));
 
 
 // if (!is_login() && get_action() != 'login' && get_action() != 'reg') {
-//     redirect('?mod=users&action=login');
+//     redirect('?mod=user&action=login');
 // }

@@ -2,11 +2,14 @@
 function construct()
 {
     load_model('index');
+    load('lib', 'validation');
 }
 
 function indexAction()
 {
-    load_view('index');
+    $list_product = show_product();
+    $data['list_product'] = $list_product;
+    load_view('index', $data);
 }
 
 function addProductAction()
@@ -20,13 +23,15 @@ function addProductAction()
 
 function saveProductAction()
 {
+    global $error, $sussess;
+    $error = array();
+    $sussess = array();
 
+    $t = time();
     if (isset($_FILES['file'])) {
-        $error = array();
         show_array($_FILES);
         $upload_dir = 'public/uploads/';
         $upload_file = $upload_dir . $_FILES['file']['name'];
-
         $type_allow = array('png', 'jpg', 'gift', 'jpeg');
         $type = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
         if (!in_array(strtolower($type), $type_allow)) {
@@ -54,22 +59,58 @@ function saveProductAction()
         show_array($error);
     }
 
+
+
     if (isset($_POST['btn-save'])) {
-        show_array($_POST);
-        $data = array(
-            'product_code' => $_POST['product']['code'],
-            'product_title' => $_POST['product']['name'],
-            'price' => $_POST['product']['price'],
-            'price_old' => $_POST['product']['price-compare'],
-            'discription' => $_POST['product']['post_content_short'],
-            'product_thumb' => "admin/$upload_file",
-            'product_content' => $_POST['product']['post_content'],
-            'cat_id' => $_POST['product']['cat'],
-            'supplier_id' => $_POST['product']['sup'],
-            'mass' => $_POST['product']['mass'],
-            'status' => $_POST['product']['status'],
-            'number' => $_POST['product']['num-stock'],
-        );
-        insert_product($data);
+        if (empty($_POST['product']['name'])) {
+            $error['product_name'] = 'Tên sản phẩm không được trống';
+        }
+
+        if (empty($error)) {
+            $data = array(
+                'product_code' => $_POST['product']['code'],
+                'product_title' => $_POST['product']['name'],
+                'price' =>  _toInt($_POST['product']['price']),
+                'price_old' => _toInt($_POST['product']['price-compare']),
+                'discription' => $_POST['product']['post_content_short'],
+                'product_thumb' => "$upload_file",
+                'product_content' => $_POST['product']['post_content'],
+                'cat_id' => $_POST['product']['cat'],
+                'supplier_id' => $_POST['product']['sup'],
+                'mass' => $_POST['product']['mass'],
+                'status' => $_POST['product']['status'],
+                'number_stock' => $_POST['product']['num-stock'],
+                'date_create' => $t,
+            );
+
+            show_array($data);
+
+            if (insert_product($data)) {
+                redirect("?mod=product&action=addProduct");
+                $sussess['product_susess'] = 'Thêm sản phẩm thành công';
+            } else {
+                $error['product_fails'] = 'Sản phẩm chưa được thêm';
+            }
+        }
     }
+}
+
+
+function formatPriceAction()
+{
+    $num = $_POST['price'];
+    $data = array(
+        'price_change' => format_number($num),
+    );
+    echo json_encode($data);
+}
+
+
+function formatComparePriceAction()
+{
+    $num = $_POST['price'];
+    $data = array(
+        'price_change' => format_number($num),
+    );
+    echo json_encode($data);
 }

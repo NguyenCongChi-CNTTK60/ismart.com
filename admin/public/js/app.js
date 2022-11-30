@@ -26,3 +26,44 @@ $(document).ready(function() {
         alert('Ẩn chi tiết');
     };
 });
+
+
+$(document).ready(function() {
+    $(".price").change(function() {
+        var number = $(this).val();
+        var data = { price: number };
+        $.ajax({
+            url: 'http://localhost/unitop/back-end/project-1/ismart.com/admin/?mod=product&action=formatPrice', //trang xử lý
+            method: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function(data) {
+                $("#product-price").val(data.price_change);
+            },
+            // error: function(xhr, ajaxOptions, throwError) {
+            //     alert(xhr.status);
+            //     alert(throwError);
+            // }
+        });
+    });
+});
+
+$(document).ready(function() {
+    $(".price-compare").change(function() {
+        var number = $(this).val();
+        var data = { price: number };
+        $.ajax({
+            url: 'http://localhost/unitop/back-end/project-1/ismart.com/admin/?mod=product&action=formatComparePrice', //trang xử lý
+            method: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function(data) {
+                $("#product-price-compare").val(data.price_change);
+            },
+            // error: function(xhr, ajaxOptions, throwError) {
+            //     alert(xhr.status);
+            //     alert(throwError);
+            // }
+        });
+    });
+});

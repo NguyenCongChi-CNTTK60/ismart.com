@@ -21,11 +21,11 @@
                 <div class="section-detail clearfix">
                     <div class="thumb-wp fl-left">
                         <a href="" title="" id="main-thumb">
-                            <img id="zoom"  style="width: 356px; height: 356px;" src="<?php echo $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_thumb']; ?>" />
+                            <img id="zoom"  style="width: 356px; height: 356px;" src="<?php echo "admin/".$product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_thumb']; ?>" />
                         </a>
                         <div id="list-thumb">
-                            <a href=""  data-image="<?php echo $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_thumb'];  ?>">
-                                <img id="zoom" src="<?php echo $product['product_thumb']; ?>" style="width: 50px; height: 50px;" />
+                            <a href=""  data-image="<?php echo "admin/".$product['product_thumb']; ?>" data-zoom-image="<?php echo "admin/".$product['product_thumb'];  ?>">
+                                <img id="zoom" src="<?php echo "admin/".$product['product_thumb']; ?>" style="width: 50px; height: 50px;" />
                             </a>
                             <?php
                             if (!empty($list_image)) {
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="thumb-respon-wp fl-left">
-                        <img src="<?php echo $product['product_thumb']; ?>" alt="">
+                        <img src="<?php echo "admin/".$product['product_thumb']; ?>" alt="">
                     </div>
                     <div class="info fl-right">
                         <h3 class="product-name"><?php echo $product['product_title']; ?></h3>

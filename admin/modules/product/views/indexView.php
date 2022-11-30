@@ -39,75 +39,27 @@
                                 <th scope="col">Giá</th>
                                 <th scope="col">Danh mục</th>
                                 <th scope="col">Ngày tạo</th>
-                                <th scope="col">Trạng thái</th>
-                                <th scope="col">Tác vụ</th>
+                                <th scope="col">Số lượng kho</th>
+                                <th scope="col">Nhà cung cấp</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>1</td>
-                                <td><img src="http://via.placeholder.com/80X80" alt=""></td>
-                                <td><a href="#">Samsung Galaxy A51 (8GB/128GB)</a></td>
-                                <td>7.790.000₫</td>
-                                <td>Điện thoại</td>
-                                <td>26:06:2020 14:00</td>
-                                <td><span class="badge badge-success">Còn hàng</span></td>
-                                <td>
-                                    <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>2</td>
-                                <td><img src="http://via.placeholder.com/80X80" alt=""></td>
-                                <td><a href="#">Điện thoại iPhone 11 Pro Max 64GB</a></td>
-                                <td>29.490.000₫</td>
-                                <td>Điện thoại</td>
-                                <td>26:06:2020 14:00</td>
-                                <td><span class="badge badge-dark">Hết hàng</span></td>
-                                <td>
-                                    <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>3</td>
-                                <td><img src="http://via.placeholder.com/80X80" alt=""></td>
-                                <td><a href="#">Apple MacBook Pro Touch 2020 i5 512GB (MWP42SA/A)</a></td>
-                                <td>47.990.000₫</td>
-                                <td>Laptop</td>
-                                <td>26:06:2020 14:00</td>
-                                <td><span class="badge badge-success">Còn hàng</span></td>
-                                <td>
-                                    <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>4</td>
-                                <td><img src="http://via.placeholder.com/80X80" alt=""></td>
-                                <td><a href="#">MacBook Air 2017 128GB (MQD32SA/A)</a></td>
-                                <td>19.990.000₫</td>
-                                <td>Laptop</td>
-                                <td>26:06:2020 14:00</td>
-                                <td><span class="badge badge-success">Còn hàng</span></td>
-                                <td>
-                                    <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
+                            <?php foreach ($list_product as $item) { ?>
+                                <tr class="row--product" style=" border-bottom:1px solid #dee2e6; ">
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>1</td>
+                                    <td><img src="<?php echo $item['product_thumb']; ?>" alt="" style="width: 60px; height: 60px;"></td>
+                                    <td><a href="#" style="color: #007bff ;"><?php echo $item['product_title']; ?></a></td>
+                                    <td><?php echo format_number($item['price']); ?></td>
+                                    <td><?php echo $item['cat_title']; ?></td>
+                                    <td><?php echo date("d/m/Y H:i", $item['date_create']); ?></td>
+                                    <td><?php echo $item['number_stock']; ?></td>
+                                    <td><?php echo $item['supplier_name']; ?></td>
+                                </tr>
+                            <?php } ?>
+
                         </tbody>
                     </table>
                     <nav aria-label="Page navigation example">

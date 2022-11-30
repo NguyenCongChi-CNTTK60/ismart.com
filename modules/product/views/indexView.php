@@ -44,7 +44,7 @@
                         ?>
                                 <li>
                                     <a href="?mod=product&action=detail&product_id=<?php echo $item['product_id'] ?>" title="" class="thumb">
-                                        <img src="<?php echo $item['product_thumb']; ?>" style="width: 358px; height: 180px;" alt="">
+                                        <img src="<?php echo "admin/".$item['product_thumb']; ?>" style="width: 358px; height: 180px;" alt="">
                                     </a>
                                     <a href="?mod=product&action=detail&product_id=<?php echo $item['product_id'] ?>" title="" class="product-name"><?php echo $item['product_title'] ?></a>
                                     <div class="price">

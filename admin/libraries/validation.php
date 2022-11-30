@@ -36,7 +36,8 @@ function set_value($value)
     if (!empty($$value)) return $$value;
 }
 
-function redirect($url) {
+function redirect($url)
+{
     if (!empty($url)) {
         header("Location: {$url}");
     }
@@ -46,4 +47,16 @@ function redirect($url) {
 function format_number($number)
 {
     return number_format($number) . "đ";
+}
+
+
+function _toInt($str)
+{
+    return (int)preg_replace("/([^0-9\\.])/i", "", $str);
+}
+
+function form_sussess($label_files)
+{
+    global $sussess;
+    if (!empty($sussess[$label_files])) return "<p class='inform_sussess'>{$sussess[$label_files]}</p>";
 }

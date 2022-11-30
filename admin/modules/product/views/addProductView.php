@@ -55,14 +55,14 @@
                                         Giá
                                     </label>
                                     <br>
-                                    <input autofocus="autofocus" id="product-name" value="" placeholder="0đ" class="next-input" size="30" type="text" name="product[price]">
+                                    <input autofocus="autofocus" id="product-price" value="" placeholder="0đ" class="next-input price" size="30" type="text" name="product[price]">
                                 </div>
                                 <div style="width: 48%">
                                     <label class="next-label" for="product-name">
                                         Giá so sánh
                                     </label>
                                     <br>
-                                    <input autofocus="autofocus" id="product-name" value="" placeholder="0đ" class="next-input" size="30" type="text" name="product[price-compare]">
+                                    <input autofocus="autofocus" id="product-price-compare" value="" placeholder="0đ" class="next-input price-compare" size="30" type="text" name="product[price-compare]">
                                 </div>
                             </div>
                             <div class="" style="margin-top: 20px;">
@@ -144,7 +144,7 @@
                                 Trạng thái
                             </label>
                             <br>
-                            <input type="radio" id="show" name="product[status]" value="show" style="width: 25px;">
+                            <input type="radio" id="show" name="product[status]" value="show" style="width: 25px;" checked>
                             <label for="show">Hiển thị</label><br>
                             <input type="radio" id="html" name="product[status]" value="hide" style="width: 25px;">
                             <label for="html">Ẩn</label> <br>

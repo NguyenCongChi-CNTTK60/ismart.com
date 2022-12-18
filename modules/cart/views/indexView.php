@@ -42,7 +42,7 @@
                                             <td><?php echo $item['product_code']; ?></td>
                                             <td>
                                                 <a href="" title="" class="thumb">
-                                                    <img src="<?php echo $item['product_thumb']; ?>" alt="">
+                                                    <img src="<?php echo "admin/".$item['product_thumb']; ?>" alt="">
                                                 </a>
                                             </td>
                                             <td>

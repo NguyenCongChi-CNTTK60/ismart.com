@@ -27,7 +27,13 @@ function is_password($password)
 function form_error($label_files)
 {
     global $error;
-    if (!empty($error[$label_files])) return "<p class='error'>{$error[$label_files]}</p>";
+    if (!empty($error[$label_files])) return "<p class='error' >{$error[$label_files]}</p>";
+}
+
+function form_sussess($label_files)
+{
+    global $sussess;
+    if (!empty($sussess[$label_files])) return "<p class='sussess' >{$sussess[$label_files]}</p>";
 }
 
 function set_value($value)
@@ -53,10 +59,4 @@ function format_number($number)
 function _toInt($str)
 {
     return (int)preg_replace("/([^0-9\\.])/i", "", $str);
-}
-
-function form_sussess($label_files)
-{
-    global $sussess;
-    if (!empty($sussess[$label_files])) return "<p class='inform_sussess'>{$sussess[$label_files]}</p>";
 }

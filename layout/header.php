@@ -53,7 +53,7 @@ $total_cart = show_total_cart();
                                     <a href="?page=category_product" title="">Sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="?page=blog" title="">Blog</a>
+                                    <a href="?mod=blog&action=index" title="">Blog</a>
                                 </li>
                                 <li>
                                     <a href="?page=detail_blog" title="">Giới thiệu</a>
@@ -92,7 +92,7 @@ $total_cart = show_total_cart();
                                                                                 echo $data['num_cart'];
                                                                             }
                                                                             ?> </span> <?php } else { ?> <span id="num" class="num-order"> 0
-                                         </span> <?php } ?>
+                                        </span> <?php } ?>
                                 </div>
                                 <?php if ($num > 0) { ?>
                                     <div id="dropdown">
@@ -103,7 +103,7 @@ $total_cart = show_total_cart();
                                             ?>
                                                     <li class="clearfix">
                                                         <a href="" title="" class="thumb fl-left">
-                                                            <img src="<?php echo $item['product_thumb']; ?>" alt="">
+                                                            <img src="<?php echo "admin/" . $item['product_thumb']; ?>" alt="">
                                                         </a>
                                                         <div class="info fl-right">
                                                             <a href="" title="" class="product-name"><?php echo $item['product_title']; ?></a>

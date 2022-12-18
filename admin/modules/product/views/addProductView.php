@@ -7,32 +7,36 @@
                 <h1 class="ui-title-bar__title">
                     Thêm mới sản phẩm
                 </h1>
+                <?php echo form_sussess('add_product_susess'); ?>
             </div>
 
             <div class="group--ui-type" style="display: flex ; justify-content: space-between; ">
                 <div class="group--ui-type-right" style="width: 65%;">
                     <div class="ui-type-container">
-                        <form method="POST" action="?mod=product&action=saveProduct" enctype="multipart/form-data">
+                        <form method="POST" action="" enctype="multipart/form-data">
                             <div class="next-input-wrapper" id="guide_line_step_1">
                                 <label class="next-label" for="product-name">
                                     Tên sản phẩm
                                 </label>
                                 <br>
-                                <input autofocus="autofocus" id="product-name" value="" placeholder="Nhập tên sản phẩm" class="next-input" size="30" type="text" name="product[name]">
+                                <input autofocus="autofocus" id="product-name" value="<?php echo set_value('product_name'); ?>" placeholder="Nhập tên sản phẩm" class="next-input" size="30" type="text" name="product[name]">
+                                <?php echo form_error('product_name'); ?>
                             </div>
                             <div class="next-input-wrapper" id="guide_line_step_2">
                                 <label class="next-label">
                                     Nội dung
                                 </label>
                                 <br>
-                                <textarea class="ckeditor" name="product[post_content]"></textarea>
+                                <textarea class="ckeditor" name="product[post_content]"><?php echo set_value('product_content'); ?></textarea>
+                                <?php echo form_error('product_content_error'); ?>
                             </div>
                             <div class="next-input-wrapper" id="guide_line_step_2">
                                 <label class="next-label">
                                     Mô tả ngắn
                                 </label>
                                 <br>
-                                <textarea class="ckeditor" name="product[post_content_short]"></textarea>
+                                <textarea class="ckeditor" name="product[post_content_short]"><?php echo set_value('product_content_short'); ?></textarea>
+                                <?php echo form_error('product_content_short'); ?>
                             </div>
                     </div>
                     <div class="ui-type-container">
@@ -41,6 +45,10 @@
                                 Ảnh sản phẩm
                             </label>
                             <input name="file" type="file"></input>
+                            <?php echo form_error('empty_pic'); ?>
+                            <?php echo form_error('type'); ?>
+                            <?php echo form_error('file_exits'); ?>
+                            <?php echo form_error('file_size'); ?>
                         </div>
                     </div>
                     <div class="ui-type-container">
@@ -55,14 +63,16 @@
                                         Giá
                                     </label>
                                     <br>
-                                    <input autofocus="autofocus" id="product-price" value="" placeholder="0đ" class="next-input price" size="30" type="text" name="product[price]">
+                                    <input autofocus="autofocus" id="product-price" value="<?php echo set_value('product_price'); ?>" placeholder="0đ" class="next-input price" size="30" type="text" name="product[price]">
+                                    <?php echo form_error('product_price_error'); ?>
                                 </div>
                                 <div style="width: 48%">
                                     <label class="next-label" for="product-name">
                                         Giá so sánh
                                     </label>
                                     <br>
-                                    <input autofocus="autofocus" id="product-price-compare" value="" placeholder="0đ" class="next-input price-compare" size="30" type="text" name="product[price-compare]">
+                                    <input autofocus="autofocus" id="product-price-compare" value="<?php echo set_value('product_price_compare'); ?>" placeholder="0đ" class="next-input price-compare" size="30" type="text" name="product[price-compare]">
+                                    <?php echo form_error('product_price_compare_error'); ?>
                                 </div>
                             </div>
                             <div class="" style="margin-top: 20px;">
@@ -83,7 +93,9 @@
                                         Mã sản phẩm/SKU
                                     </label>
                                     <br>
-                                    <input autofocus="autofocus" id="product-name" value="" placeholder="" class="next-input" size="30" type="text" name="product[code]">
+                                    <input autofocus="autofocus" id="product-name" value="<?php echo set_value('product_code'); ?>" placeholder="" class="next-input" size="30" type="text" name="product[code]">
+                                    <?php echo form_error('product_code_error'); ?>
+                                    <?php echo form_error('code_exit'); ?>
                                 </div>
                                 <div style="width: 48%">
                                     <label class="next-label" for="product-name">
@@ -167,6 +179,7 @@
                                     <?php foreach ($list_cat as $item) { ?>
                                         <option data-id="1" value="<?php echo $item['cat_id']; ?>"><?php echo $item['cat_title']; ?></option> <?php } ?>
                                 </select>
+                                <?php echo form_error('product_cat_error'); ?>
                             </div>
                             <div style="margin-top: 20px ;">
                                 <label class="next-label" for="product-name">
@@ -179,6 +192,7 @@
                                         <option data-id="1" value="<?php echo $item1['supplier_id']; ?>"><?php echo $item1['supplier_name']; ?></option>
                                     <?php } ?>
                                 </select>
+                                <?php echo form_error('product_sup_error'); ?>
                                 <hr class="next-card__section__separator--half">
                             </div>
                         </div>

@@ -185,7 +185,7 @@
                                                 <td class="product__image">
                                                     <div class="product-thumbnail">
                                                         <div class="product-thumbnail__wrapper">
-                                                            <img src="<?php echo $item1['product_thumb']; ?>" alt="Balo PRADA cá tính Default Title" class="product-thumbnail__image">
+                                                            <img src="<?php echo "admin/".$item1['product_thumb']; ?>" alt="Image Default Title" class="product-thumbnail__image">
                                                         </div>
                                                     </div>
                                                 </td>

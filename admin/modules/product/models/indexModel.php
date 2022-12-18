@@ -25,3 +25,10 @@ function insert_product($data)
 {
     return db_insert('tbl_products', $data);
 }
+
+function check_code_product($product_code)
+{
+    $sql = "SELECT product_code FROM tbl_products WHERE product_code = '$product_code'";
+    $data = db_num_rows($sql);
+    return $data;
+}

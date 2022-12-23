@@ -149,7 +149,7 @@ ul#sidebar-menu * {
 
 .nav-link {
     display: block;
-    padding: .5rem 1rem;
+    padding: .6rem 1rem;
     position: relative;
 }
 
@@ -170,7 +170,7 @@ ul#sidebar-menu * {
 }
 
 #sidebar-menu .sub-menu {
-    padding-left: 22px;
+    padding-left: 25px;
     border-left: 1px dashed #b8b8b8;
     margin-left: 6px;
     display: none;
@@ -186,7 +186,7 @@ ul#sidebar-menu * {
 }
 
 .form-search {
-    width: 300px;
+    width: 450px;
 }
 
 .table tr td {
@@ -265,7 +265,7 @@ a:hover {
 }
 
 .row--product td {
-    padding: 0.35rem 0.55rem;
+    padding: 0.45rem 0.55rem;
 }
 
 .error {
@@ -282,4 +282,9 @@ a:hover {
     margin-bottom: 0px;
     font-weight: 600;
     border-top: 3px solid #50b83c;
+}
+
+.lbl-sidebar {
+    color: white;
+    font-size: 14px;
 }

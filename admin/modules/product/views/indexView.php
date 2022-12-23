@@ -8,8 +8,8 @@
                     <h5 class="m-0 ">Danh sách sản phẩm</h5>
                     <div class="form-search form-inline">
                         <form action="#">
-                            <input type="" class="form-control form-search" placeholder="Tìm kiếm">
-                            <input type="submit" name="btn-search" value="Tìm kiếm" class="btn btn-primary" style=" margin-left: 220px; margin-top: -65px;">
+                            <input type="" class="form-control form-search" placeholder="Tìm kiếm theo tên, danh mục sản phẩm" style="width: 78%;">
+                            <input type="submit" name="btn-search" value="Tìm kiếm" class="btn btn-primary" style=" margin-left: 360px; margin-top: -65px;">
                         </form>
                     </div>
                 </div>
@@ -21,11 +21,14 @@
                     </div>
                     <div class="form-action form-inline py-3">
                         <select class="form-control mr-1" id="">
-                            <option>Chọn</option>
-                            <option>Tác vụ 1</option>
-                            <option>Tác vụ 2</option>
+                            <option>Lọc sản phẩm</option>
+                            <option>Sản phẩm còn hàng</option>
+                            <option>Số lượng dưới 10</option>
+                            <option>Sắp xếp theo nhà cung cấp</option>
+                            <option>Sắp xếp giá tăng dần</option>
+                            <option>Sắp xếp giá giảm dần</option>
                         </select>
-                        <input type="submit" name="btn-search" value="Áp dụng" class="btn btn-primary">
+                        <input type="submit" name="btn-search" value="Lưu bộ lọc" class="btn btn-primary">
                     </div>
                     <table class="table table-striped table-checkall">
                         <thead>
@@ -44,13 +47,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($list_product as $item) { ?>
+                            <?php
+                            global $start;
+                            $count = $start;
+                            foreach ($list_product as $item) {
+                                $count++; ?>
                                 <tr class="row--product" style=" border-bottom:1px solid #dee2e6; ">
                                     <td>
                                         <input type="checkbox">
                                     </td>
-                                    <td>1</td>
-                                    <td><img src="<?php echo $item['product_thumb']; ?>" alt="" style="width: 60px; height: 60px;"></td>
+                                    <td><?php echo $count; ?></td>
+                                    <td><img src="<?php echo $item['product_thumb']; ?>" alt="" style="width: 45px; height: 45px;"></td>
                                     <td><a href="#" style="color: #007bff ;"><?php echo $item['product_title']; ?></a></td>
                                     <td><?php echo format_number($item['price']); ?></td>
                                     <td><?php echo $item['cat_title']; ?></td>
@@ -62,27 +69,16 @@
 
                         </tbody>
                     </table>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">Trước</span>
-                                    <span class="sr-only">Sau</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span class="" style="padding: 8px; color: #585454; font-size: 15px;">Có <?php global $num_product;
+                                                                                                    echo $num_product; ?> sản phẩm trong hệ thống</span>
+                        <nav aria-label="Page navigation example">
+                            <?php global $total_page, $page;
+                            echo get_padding($total_page, $page, "?mod=product&action=index"); ?>
+                        </nav>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

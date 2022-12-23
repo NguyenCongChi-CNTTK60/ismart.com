@@ -25,6 +25,7 @@
                     <div class="item">
                         <img src="public/images/slider-03.png" alt="">
                     </div>
+
                     <div class="item">
                         <img src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/sliding-fold4-th11-v2.jpg" alt="">
                     </div>
@@ -407,60 +408,46 @@
                 </div>
             </div>
         </div>
+        <!-- sidebar -->
         <div class="sidebar fl-left">
             <div class="section" id="category-product-wp">
                 <div class="section-head">
                     <h3 class="section-title">Danh mục sản phẩm</h3>
                 </div>
                 <div class="secion-detail">
-                    <ul class="list-item">
-                        <li>
-                            <a href="?mod=product&action=index&cat_id=3" title="">Điện thoại</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="?page=category_product" title="">Iphone</a>
-                                </li>
-                                <li>
-                                    <a href="?page=category_product" title="">Samsung</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="?page=category_product" title="">Iphone X</a>
-                                        </li>
-                                        <li>
-                                            <a href="?page=category_product" title="">Iphone 8</a>
-                                        </li>
-                                        <li>
-                                            <a href="?page=category_product" title="">Iphone 8 Plus</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="?page=category_product" title="">Oppo</a>
-                                </li>
-                                <li>
-                                    <a href="?page=category_product" title="">Bphone</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="?mod=product&action=index&cat_id=2" title="">Máy tính bảng</a>
-                        </li>
-                        <li>
-                            <a href="?mod=product&action=index&cat_id=1" title="">Laptop</a>
-                        </li>
-                        <li>
-                            <a href="?mod=product&action=index&cat_id=4" title="">Tai nghe</a>
-                        </li>
-                        <li>
-                            <a href="?mod=product&action=index&cat_id=5" title="">Thời trang</a>
-                        </li>
-                        <li>
-                            <a href="?mod=product&action=index&cat_id=6" title="">Đồ gia dụng</a>
-                        </li>
-                        <li>
-                            <a href="?mod=product&action=index&cat_id=7" title="">Thiết bị văn phòng</a>
-                        </li>
-                    </ul>
+                    <?php foreach ($list_cat as $item) { ?>
+                        <ul class="list-item">
+                            <li>
+                                <a href="?mod=product&action=index&cat_id=<?php echo $item['cat_id']; ?>" title=""><?php echo $item['cat_title']; ?></a>
+                                <!-- <ul class="sub-menu">
+                                    <li>
+                                        <a href="?page=category_product" title="">Iphone</a>
+                                    </li>
+                                    <li>
+                                        <a href="?page=category_product" title="">Samsung</a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="?page=category_product" title="">Iphone X</a>
+                                            </li>
+                                            <li>
+                                                <a href="?page=category_product" title="">Iphone 8</a>
+                                            </li>
+                                            <li>
+                                                <a href="?page=category_product" title="">Iphone 8 Plus</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="?page=category_product" title="">Oppo</a>
+                                    </li>
+                                    <li>
+                                        <a href="?page=category_product" title="">Bphone</a>
+                                    </li>
+                                </ul> -->
+                            </li>
+                        <?php } ?>
+
+                        </ul>
                 </div>
             </div>
             <div class="section" id="selling-wp">

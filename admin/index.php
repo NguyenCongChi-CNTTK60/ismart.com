@@ -5,6 +5,7 @@
  * app path
  * --------------------------------------------------------------------
  */
+
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 $app_path = dirname(__FILE__);

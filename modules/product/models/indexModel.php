@@ -21,20 +21,30 @@ function get_product_by_product_id($id)
 }
 
 
-function get_list_image($id){
+function get_list_image($id)
+{
     $sql = "SELECT * FROM tbl_image_products INNER JOIN tbl_products ON tbl_image_products.product_id = tbl_products.product_id WHERE tbl_image_products.product_id = $id";
     $data = db_fetch_array($sql);
     return $data;
 }
 
-function show_cart(){
+function show_cart()
+{
     $sql = "SELECT *,number_cart,(number_cart*price) AS 'thanhtien' FROM tbl_products INNER JOIN tbl_cart ON tbl_products.product_id = tbl_cart.product_id";
     $data = db_fetch_array($sql);
     return $data;
 }
 
-function show_total_cart(){
+function show_total_cart()
+{
     $sql = "SELECT sum(number_cart*price_cart) as 'tongtien' FROM tbl_cart";
     $data = db_fetch_row($sql);
+    return $data;
+}
+
+function show_cat()
+{
+    $sql = "SELECT * FROM tbl_category";
+    $data = db_fetch_array($sql);
     return $data;
 }

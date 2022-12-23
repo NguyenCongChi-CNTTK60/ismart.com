@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/detailOrder.css">
+    <link rel="stylesheet" href="public/fontawesome/css/all.css">
     <title>Admintrator</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="ckeditor/ckeditor.js" type="text/javascript"></script>

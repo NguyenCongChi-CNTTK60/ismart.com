@@ -293,6 +293,11 @@
     border: 1px solid #ddd;
 }
 
+#list-product-wp .section-detail .list-item li:hover img {
+    transform: rotate(3deg);
+    transition: all 0.7s;
+}
+
 #list-product-wp .section-detail .list-item li:nth-child(4n) {
     margin-right: 0!important;
 }

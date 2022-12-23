@@ -7,7 +7,20 @@ function construct()
 
 function indexAction()
 {
-    $list_product = show_product();
+    global $start, $total_page, $page, $num_product;
+    // số lượng trang
+    $num_page = 12;
+
+    // số lượng sản phẩm
+    $num_product = count_product();
+
+    $total_page = ceil($num_product / $num_page);
+
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+    $start = ($page - 1) * $num_page;
+
+    $list_product = show_product_limit($start, $num_page);
     $data['list_product'] = $list_product;
     load_view('index', $data);
 }
@@ -180,4 +193,29 @@ function formatComparePriceAction()
         'price_change' => format_number($num),
     );
     echo json_encode($data);
+}
+
+
+function dividePageAction()
+{
+
+    // số lượng trang
+    $num_page = 12;
+
+    // số lượng sản phẩm
+    $num_product = count_product();
+
+    $total_page = ceil($num_product / $num_page);
+
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+    $start = ($page - 1) * $num_page;
+
+    echo $start;
+
+    echo "Số trang: " . $total_page;
+
+    $list_product = show_product_limit($start, $num_page);
+    $data['list_product'] = $list_product;
+    load_view('index', $data);
 }

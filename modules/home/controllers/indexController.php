@@ -2,12 +2,12 @@
 function construct()
 {
    load('lib', 'validation');
-   
+   load_model('index');
 }
 
 
 function indexAction()
 {
-   load_model('index');
-   load_view('index');
+   $data['list_cat'] = show_cat();
+   load_view('index', $data);
 }

@@ -68,7 +68,7 @@
 #customer-info-wp .form-row .form-col input[type="tel"],
 #customer-info-wp .form-row:nth-child(3) .form-col textarea {
     width: 100%;
-    padding: 6px 12px;
+    padding: 5px 12px;
     border: 1px solid #cccccc;
 }
 
@@ -193,5 +193,5 @@ select:hover {
 
 .note {
     width: 225%;
-    height: 145px;
+    height: 110px;
 }

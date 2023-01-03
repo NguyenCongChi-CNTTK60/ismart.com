@@ -99,7 +99,7 @@ function deleteCartAction()
                                  <td><?php echo $item['product_code']; ?></td>
                                  <td>
                                     <a href="" title="" class="thumb">
-                                       <img src="admin/<?php echo $item['product_thumb']; ?>" alt="">
+                                       <img src="admin/<?php echo $item['product_thumb']; ?>" alt="" style="max-width: 75px; height: 65px; display: block;">
                                     </a>
                                  </td>
                                  <td>
@@ -170,6 +170,8 @@ function deleteCartAction()
 ?>
 
 <?php
+
+
 function shownumOrderAction()
 {
    $num_cart = show_num_cart();

@@ -21,19 +21,15 @@
                 <div class="section-detail clearfix">
                     <div class="thumb-wp fl-left">
                         <a href="" title="" id="main-thumb">
-                            <img id="zoom" style="width: 356px; height: 356px;" src="<?php echo "admin/" . $product['product_thumb']; ?>" data-zoom-image="<?php echo $product['product_thumb']; ?>" />
+                            <img id="" src="<?php echo "admin/" . $product['product_thumb']; ?>" />
                         </a>
                         <div id="list-thumb">
-                            <a href="" data-image="<?php echo "admin/" . $product['product_thumb']; ?>" data-zoom-image="<?php echo "admin/" . $product['product_thumb'];  ?>">
-                                <img id="zoom" src="<?php echo "admin/" . $product['product_thumb']; ?>" style="width: 50px; height: 50px;" />
-                            </a>
+                            <img id="" src="<?php echo "admin/" . $product['product_thumb']; ?>" style="padding: 3px;"/>
                             <?php
                             if (!empty($list_image)) {
                                 foreach ($list_image as $item) {
                             ?>
-                                    <a href="" data-image="<?php echo $item['product_thumb_dis'];  ?>" data-zoom-image="<?php echo $item['product_thumb_dis']; ?>">
-                                        <img id="zoom" src="<?php echo $item['product_thumb_dis']; ?>" style="width: 50px; height: 50px;" />
-                                    </a>
+                                    <img  id="" src="<?php echo "admin/" . $item['product_thumb_dis']; ?>"  style="padding: 3px;"/>
                             <?php }
                             } ?>
                         </div>
@@ -192,31 +188,6 @@
                         <ul class="list-item">
                             <li>
                                 <a href="?mod=product&action=index&cat_id=<?php echo $item['cat_id']; ?>" title=""><?php echo $item['cat_title']; ?></a>
-                                <!-- <ul class="sub-menu">
-                                    <li>
-                                        <a href="?page=category_product" title="">Iphone</a>
-                                    </li>
-                                    <li>
-                                        <a href="?page=category_product" title="">Samsung</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="?page=category_product" title="">Iphone X</a>
-                                            </li>
-                                            <li>
-                                                <a href="?page=category_product" title="">Iphone 8</a>
-                                            </li>
-                                            <li>
-                                                <a href="?page=category_product" title="">Iphone 8 Plus</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="?page=category_product" title="">Oppo</a>
-                                    </li>
-                                    <li>
-                                        <a href="?page=category_product" title="">Bphone</a>
-                                    </li>
-                                </ul> -->
                             </li>
                         <?php } ?>
                         </ul>
@@ -231,5 +202,13 @@
             </div>
         </div>
     </div>
+    <script>
+        $(() => {
+            $('#list-thumb img').click(function() {
+                let imgPath = $(this).attr('src');
+                $('#main-thumb img').attr('src', imgPath);
+            })
+        })
+    </script>
 </div>
 <?php get_footer(); ?>

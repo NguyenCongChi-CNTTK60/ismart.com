@@ -104,7 +104,8 @@
                             <i class="fa fa-truck" style="padding-top: 12px; color:#637391;"></i>
                             <span class="payment-discrip" style="padding-top: 10px;">GIAO HÀNG</span>
                             <div class="submit--payment">
-                                <a class="btn btn-primary" href="">Giao hàng</a>
+                                <a class="btn btn-primary" href="?mod=order&action=orderCreate&order_id=<?php global $order_id;
+                                                                                                        echo $order_id; ?>">Giao hàng</a>
                             </div>
                         </div>
                     </section>
@@ -150,7 +151,7 @@
                         </div>
                         <div class="ui-type" style="padding: 20px ;">
                             <p class="type--subdued" style="font-size: 15px ;">Phương thức vận chuyển: <span class="bold" style="font-weight: 600px; margin-left: 15px;">Giao hàng tận nơi</span></p>
-                            <p class="type--subdued" style="font-size: 15px ; text-align:left;">Khối lượng: <span class="bold">0.00 kg</span></p>
+                            <p class="type--subdued" style="font-size: 15px ; text-align:left;  margin-left: 2px; ">Khối lượng: <span class="bold">0.00 kg</span></p>
                         </div>
                     </section>
                 </div>

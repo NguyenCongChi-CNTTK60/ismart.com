@@ -36,11 +36,10 @@
 
 .category-product-page #list-product-wp .section-title {
     margin: 0;
-    margin-top: 35px;
 }
 
 .category-product-page #list-product-wp .section-head {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .filter-wp .desc {
@@ -120,4 +119,29 @@
 
 #paging-wp .list-item li a:hover {
     background: #868686;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.btn-group.pull-left.sort-box {
+    padding-bottom: 8px;
+    width: 100%;
+    border-bottom: 1px solid #aba8a8;
+}
+
+ul.sort-list li {
+    padding: 0px 12px;
+}
+
+ul.sort-list li a {
+    font-weight: 400;
+    color: #898989;
+}
+
+ul.sort-list li a:hover {
+    padding-bottom: 11px;
+    color: rgba(0, 127, 240, .8);
+    border-bottom: 2px solid rgba(0, 127, 240, .8);
 }

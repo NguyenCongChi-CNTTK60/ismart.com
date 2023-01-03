@@ -11,7 +11,7 @@
             </div>
 
             <div class="group--ui-type" style="display: flex ; justify-content: space-between; ">
-                <div class="group--ui-type-right" style="width: 65%;">
+                <div class="group--ui-type-right" style="width: 69%;">
                     <div class="ui-type-container">
                         <form method="POST" action="" enctype="multipart/form-data">
                             <div class="next-input-wrapper" id="guide_line_step_1">
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="group--ui-type-left" style="width: 33% ;">
+                <div class="group--ui-type-left" style="width: 29% ;">
                     <div class="ui-type-container">
                         <div class="next-input-wrapper" id="guide_line_step_1">
                             <label class="next-label-1">

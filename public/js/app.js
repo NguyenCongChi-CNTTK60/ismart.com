@@ -2,7 +2,8 @@ $(document).ready(function() {
     $(".city").change(function() {
         var id = $(".city").val();
         var data = { id: id };
-        //   console.log(data);
+        //alert(id);
+        //console.log(data);
         $.ajax({
             url: 'http://localhost/unitop/back-end/project-1/ismart.com/?mod=checkout&action=process', //trang xử lý
             method: 'POST',
@@ -64,6 +65,9 @@ $(document).ready(function() {
     });
 });
 
+//
+// Xóa sản phẩm trong giỏ hàng
+//
 $(document).ready(function() {
     $('.del-product').click(function(e) {
         e.preventDefault();
@@ -125,9 +129,33 @@ $(document).ready(function() {
 });
 
 
-
-
-
+//
+// Xử lý ajax trang lọc sản phẩm
+//
+/* $(document).ready(function() {
+    $('input:radio[name=r-price]').click(function() {
+        var checkbox = document.getElementsByName("r-price");
+        for (var i = 0; i < checkbox.length; i++) {
+            if (checkbox[i].checked === true) {
+                var price = checkbox[i].value;
+            }
+        }
+        var data = { price: price };
+        $.ajax({
+            url: 'http://localhost/unitop/back-end/project-1/ismart.com/?mod=product&action=findPrice', //trang xử lý
+            method: 'POST',
+            data: data,
+            dataType: 'text',
+            success: function(data) {
+                $(".list-item-find-price").html(data);
+            },
+            error: function(xhr, ajaxOptions, throwError) {
+                alert(xhr.status);
+                alert(throwError);
+            }
+        });
+    });
+}); */
 /* 
 1. đẩy dữ liệu từ form lên ajax
 2. chuyển ajax lên server

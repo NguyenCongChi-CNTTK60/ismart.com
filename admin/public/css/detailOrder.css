@@ -1,6 +1,7 @@
 section.ui-cart {
-    width: 40%;
+    width: 55%;
     padding: 22px;
+    font-size: 14px;
 }
 
 .ui-stack-wp {
@@ -8,7 +9,7 @@ section.ui-cart {
 }
 
 .ui-stack-fill {
-    width: 85%;
+    width: 80%;
 }
 
 .ui-stack-item p {
@@ -69,7 +70,7 @@ tr.orders-line-item {
 }
 
 .type--subdued {
-    width: 49%;
+    width: 68%;
     text-align: end;
     color: #637381;
 }
@@ -84,9 +85,9 @@ tr.orders-line-item {
 }
 
 .payment-discrip {
-    font-size: 15px;
+    font-size: 14px;
     margin-left: 20px;
-    width: 500px;
+    width: 75%;
 }
 
 i.payment--icon {
@@ -124,7 +125,8 @@ i.payment--icon {
 section.ui-info {
     width: 41%;
     padding: 25px;
-    margin-left: 150px;
+    margin-left: 50px;
+    font-size: 14px;
 }
 
 h2.ui-header {

@@ -8,6 +8,14 @@ function is_username($username)
     return true;
 }
 
+function is_phone($phone)
+{
+    $partten = "/^0(1\d{9}|9\d{8})$/";
+    if (!preg_match($partten, $phone, $maths))
+        return false;
+    return true;
+}
+
 function is_email($email)
 {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

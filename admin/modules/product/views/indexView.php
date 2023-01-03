@@ -13,7 +13,7 @@
                         </form>
                     </div>
                 </div>
-                <div class=" card-body">
+                <div class="card-body" style="font-size: 15px;">
                     <div class="analytic">
                         <a href="" class="text-primary">Trạng thái 1<span class="text-muted">(10)</span></a>
                         <a href="" class="text-primary">Trạng thái 2<span class="text-muted">(5)</span></a>
@@ -58,7 +58,7 @@
                                     </td>
                                     <td><?php echo $count; ?></td>
                                     <td><img src="<?php echo $item['product_thumb']; ?>" alt="" style="width: 45px; height: 45px;"></td>
-                                    <td><a href="#" style="color: #007bff ;"><?php echo $item['product_title']; ?></a></td>
+                                    <td><a href="#" style="color: #4691e0;"><?php echo $item['product_title']; ?></a></td>
                                     <td><?php echo format_number($item['price']); ?></td>
                                     <td><?php echo $item['cat_title']; ?></td>
                                     <td><?php echo date("d/m/Y H:i", $item['date_create']); ?></td>

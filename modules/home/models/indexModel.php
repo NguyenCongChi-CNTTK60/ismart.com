@@ -19,3 +19,24 @@ function show_cat()
     $data = db_fetch_array($sql);
     return $data;
 }
+
+function get_product_news()
+{
+    $sql = "SELECT * FROM tbl_products ORDER BY product_id DESC LIMIT 10";
+    $data = db_fetch_array($sql);
+    return $data;
+}
+
+function get_list_product_by_cat_id($id)
+{
+    $sql = "SELECT * FROM tbl_products INNER JOIN tbl_category ON tbl_products.cat_id = tbl_category.cat_id WHERE tbl_products.cat_id=$id";
+    $data = db_fetch_array($sql);
+    return $data;
+}
+
+function get_list_product_by_cat_title($title)
+{
+    $sql = "SELECT * FROM tbl_products INNER JOIN tbl_category ON tbl_products.cat_id = tbl_category.cat_id WHERE cat_title = $title LIMIT 8";
+    $data = db_fetch_array($sql);
+    return $data;
+}

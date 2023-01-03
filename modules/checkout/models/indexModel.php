@@ -85,8 +85,8 @@ function show_detail_order($id)
     return $data;
 }
 
-function get_order_id($phone){
-    $sql = "SELECT order_id FROM tbl_order INNER JOIN tbl_customer ON tbl_order.customer_id = tbl_customer.customer_id WHERE phone = $phone ORDER BY date_create DESC;";
+function get_order_id(){
+    $sql = "SELECT order_id FROM tbl_order ORDER BY order_id DESC";
     $data = db_fetch_array($sql);
     return $data;
 }

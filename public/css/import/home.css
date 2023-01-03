@@ -3,7 +3,7 @@
 #main-content-wp {
     background: #f7f7f7;
     padding-top: 25px;
-    padding-bottom: 75px;
+    padding-bottom: 50px;
 }
 
 .main-content {
@@ -34,11 +34,11 @@
 #selling-wp .section-title,
 #filter-product-wp .section-title {
     display: block;
-    font-size: 20px;
+    font-size: 17px;
     text-transform: uppercase;
-    background: #969696;
+    background: #cd1f28;
     color: #fff;
-    padding: 15px;
+    padding: 12px;
     border-bottom: 1px solid #dadada;
 }
 
@@ -282,6 +282,7 @@
     background: #fff;
     padding: 10px 10px 30px 10px;
     border: 1px solid transparent;
+    border-radius: 5px;
 }
 
 #feature-product-wp .section-detail .list-item li {
@@ -294,7 +295,7 @@
 }
 
 #list-product-wp .section-detail .list-item li:hover img {
-    transform: rotate(3deg);
+    transform: scale(1.03);
     transition: all 0.7s;
 }
 
@@ -330,4 +331,11 @@
     right: 5%;
     transform: translateY(-50%);
     color: #666;
+}
+
+.error {
+    color: #c23527;
+    font-size: 13px;
+    padding-top: 5px;
+    margin-bottom: 0px;
 }

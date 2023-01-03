@@ -20,15 +20,19 @@
                 <h1 class="section-title">Thông tin khách hàng</h1>
             </div>
             <div class="section-detail">
-                <form method="POST" action="?mod=checkout&action=order" name="form-checkout">
+                <form method="POST" action="" name="form-checkout">
                     <div class="form-row clearfix">
                         <div class="form-col fl-left">
                             <label for="fullname">Họ tên <span style="color:red;">(*)</span> </label>
-                            <input type="text" name="fullname" id="fullname" placeholder="Họ và tên">
+                            <input type="text" name="fullname" id="fullname" placeholder="Họ và tên" value="<?php global $fullname;
+                                                                                                            if (!empty($fullname)) echo $fullname; ?>">
+                            <?php echo form_error('fullname'); ?>
                         </div>
                         <div class="form-col fl-right">
                             <label for="email">Email <span style="color:red;">(*)</span> </label>
-                            <input type="email" name="email" id="email" placeholder="Email">
+                            <input type="email" name="email" id="email" placeholder="Email" value="<?php global $email2;
+                                                                                                    if (!empty($email2)) echo $email2; ?>">
+                            <?php echo form_error('email'); ?>
                         </div>
                     </div>
                     <div class="form-row clearfix">
@@ -38,7 +42,9 @@
                         </div>
                         <div class="form-col fl-right">
                             <label for="phone">Số điện thoại <span style="color:red;">(*)</span></label>
-                            <input type="tel" name="phone" id="phone" placeholder="Số điện thoại">
+                            <input type="tel" name="phone" id="phone" placeholder="Số điện thoại" value="<?php global $phone;
+                                                                                                    if (!empty($phone)) echo $phone; ?>">
+                            <?php echo form_error('phone'); ?>
                         </div>
                     </div>
                     <!-- select city -->

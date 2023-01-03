@@ -5,7 +5,7 @@
                 <div class="nav-link-icon d-inline-flex">
                     <i class="fa-solid fa-house" style="padding-right: 8px ;"></i>
                 </div>
-                Dashboard
+                Trang chủ
             </a>
         </li>
         <li class="nav-link">

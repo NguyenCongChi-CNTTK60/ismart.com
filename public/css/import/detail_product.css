@@ -70,10 +70,14 @@
 
 #detail-product-wp .owl-controls .owl-buttons div.owl-next:before {
     content: '\f105';
+    font-size: 22px;
+    color: red;
 }
 
 #detail-product-wp .owl-controls .owl-buttons div.owl-prev:before {
     content: '\f104';
+    font-size: 22px;
+    color: red;
 }
 
 .thumb-respon-wp {
@@ -196,7 +200,7 @@
 }
 
 #detail-product-wp .buy-now {
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 12px 75px;
     background: #f12a43;
     font-size: 16px;
@@ -228,5 +232,11 @@
 }
 
 .border_radius {
+    border-radius: 5px;
+}
+
+#list-thumb img:hover {
+    cursor: pointer;
+    border: 1px solid rgba(0, 127, 240, .8);
     border-radius: 5px;
 }

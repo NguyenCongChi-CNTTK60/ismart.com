@@ -20,8 +20,8 @@
                     <h3 class="section-title fl-left"><?php global $cat_title;
                                                         if (!empty($cat_title)) echo $cat_title['cat_title']; ?></h3>
                     <div class="filter-wp fl-right">
-                        <p class="desc">Hiển thị 45 trên 50 sản phẩm</p>
-                        <div class="form-filter">
+                        <!-- <p class="desc">Hiển thị 45 trên 50 sản phẩm</p> -->
+                        <!-- <div class="form-filter">
                             <form method="POST" action="">
                                 <select name="select">
                                     <option value="0">Sắp xếp</option>
@@ -32,11 +32,26 @@
                                 </select>
                                 <button type="submit">Lọc</button>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
+                <!-- Lọc giá -->
+                <div class="sort-box-holder d-flex">
+                    <div class="btn-group pull-left sort-box d-flex">
+                        <span>Ưu tiên xem: </span>
+                        <?php global $cat_id; ?>
+                        <ul class="sort-list d-flex">
+                            <li><a href="">Mới nhất</a></li>
+                            <li><a href="">Phổ biến nhất</a></li>
+                            <li><a href="">Đánh giá cao nhất</a></li>
+                            <li><a href="./?mod=product&action=price&cat_id=<?php echo $cat_id; ?>">Giá tăng</a></li>
+                            <li><a href="./?mod=product&action=price_desc&cat_id=<?php echo $cat_id; ?>">Giá giảm dần</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding: 15px"></div>
                 <div class="section-detail">
-                    <ul class="list-item clearfix">
+                    <ul class="list-item clearfix list-item-find-price">
                         <?php
                         if (!empty($list_product_cat_id)) {
                             // show_array($list_product);
@@ -44,7 +59,7 @@
                         ?>
                                 <li>
                                     <a href="?mod=product&action=detail&product_id=<?php echo $item['product_id'] ?>" title="" class="thumb">
-                                        <img src="<?php echo "admin/" . $item['product_thumb']; ?>" style="width: 358px; height: 180px;" alt="">
+                                        <img src="<?php echo "admin/" . $item['product_thumb']; ?>" alt="">
                                     </a>
                                     <a href="?mod=product&action=detail&product_id=<?php echo $item['product_id'] ?>" title="" class="product-name"><?php echo $item['product_title'] ?></a>
                                     <div class="price">
@@ -88,31 +103,6 @@
                         <ul class="list-item">
                             <li>
                                 <a href="?mod=product&action=index&cat_id=<?php echo $item['cat_id']; ?>" title=""><?php echo $item['cat_title']; ?></a>
-                                <!-- <ul class="sub-menu">
-                                    <li>
-                                        <a href="?page=category_product" title="">Iphone</a>
-                                    </li>
-                                    <li>
-                                        <a href="?page=category_product" title="">Samsung</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="?page=category_product" title="">Iphone X</a>
-                                            </li>
-                                            <li>
-                                                <a href="?page=category_product" title="">Iphone 8</a>
-                                            </li>
-                                            <li>
-                                                <a href="?page=category_product" title="">Iphone 8 Plus</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="?page=category_product" title="">Oppo</a>
-                                    </li>
-                                    <li>
-                                        <a href="?page=category_product" title="">Bphone</a>
-                                    </li>
-                                </ul> -->
                             </li>
                         <?php } ?>
                         </ul>
@@ -132,24 +122,28 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><input type="radio" name="r-price"></td>
-                                    <td>Dưới 500.000đ</td>
+                                    <td> <input type="radio" name="r-price" value="500000" id="r-pice-d-5"> </td>
+                                    <td> <label for="r-pice-d-5"> Dưới 500.000đ </label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="r-price"></td>
-                                    <td>500.000đ - 1.000.000đ</td>
+                                    <td> <input type="radio" name="r-price" value="2000000" id="r-pice-d-5-2"> </td>
+                                    <td> <label for="r-pice-d-5-2"> 500.000đ - 2.000.000đ </label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="r-price"></td>
-                                    <td>1.000.000đ - 5.000.000đ</td>
+                                    <td> <input type="radio" name="r-price" value="10000000" id="r-pice-d-2-10"> </td>
+                                    <td> <label for="r-pice-d-2-10"> 2.000.000đ - 10.000.000đ </label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="r-price"></td>
-                                    <td>5.000.000đ - 10.000.000đ</td>
+                                    <td> <input type="radio" name="r-price" value="25000000" id="r-pice-d-10-25"> </td>
+                                    <td> <label for="r-pice-d-10-25"> 10.000.000đ - 25.000.000đ </label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="r-price"></td>
-                                    <td>Trên 10.000.000đ</td>
+                                    <td> <input type="radio" name="r-price" value="50000000" id="r-pice-d-25-50"> </td>
+                                    <td> <label for="r-pice-d-25-50"> 25.000.000đ - 50.000.000đ </label></td>
+                                </tr>
+                                <tr>
+                                    <td> <input type="radio" name="r-price" value="51000000" id="r-pice-t-50"> </td>
+                                    <td> <label for="r-pice-t-50"> Trên 50.000.000đ </label></td>
                                 </tr>
                             </tbody>
                         </table>

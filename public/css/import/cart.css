@@ -39,10 +39,10 @@
 }
 
 #info-cart-wp table thead tr td {
-    font-size: 15px;
+    font-size: 14px;
     line-height: normal;
     text-transform: uppercase;
-    padding: 18px 25px;
+    padding: 14px 25px;
     color: #333;
     background: #f1f1f1;
     border: 0;
@@ -63,10 +63,7 @@
 
 #info-cart-wp table tbody tr td .thumb {
     display: inline-block;
-    width: 100px;
-    min-height: 100px;
     overflow: hidden;
-    border: 1px solid #ccc;
 }
 
 #checkout-cart {

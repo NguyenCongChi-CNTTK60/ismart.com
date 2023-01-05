@@ -1,2 +1,1 @@
 # ismart.com
-ha
